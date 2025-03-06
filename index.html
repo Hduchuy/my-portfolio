@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoàng Đức Huy (Fourth) - Portfolio</title>
+    <title>Hoàng Đức Huy - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -136,54 +136,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Feedback Form */
-        #feedback form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        #feedback input, #feedback textarea {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ff69b4;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        #feedback textarea {
-            height: 100px;
-        }
-
-        #feedback button {
-            background-color: #ff69b4;
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #feedback button:hover {
-            background-color: #ffb6c1;
-        }
-
-        /* Comments Display */
-        #feedback .comment {
-            border-top: 1px solid #ff69b4;
-            padding-top: 1rem;
-            margin-top: 1rem;
-        }
-
-        #feedback .comment p {
-            font-style: italic;
-        }
-
-        #feedback .comment strong {
-            color: #ff69b4;
-        }
-
         /* Contact */
         #contact .social-links {
             display: flex;
@@ -244,7 +196,6 @@
             <a href="#workstyle">Phong cách làm việc</a>
             <a href="#projects">Dự án</a>
             <a href="#vision">Tầm nhìn</a>
-            <a href="#feedback">Đánh giá</a>
             <a href="#contact">Liên hệ</a>
         </div>
     </header>
@@ -291,22 +242,6 @@
         <h2>🌟 Tầm nhìn & Định hướng tương lai</h2>
         <p>Mình mong muốn trở thành một designer chuyên nghiệp, không chỉ giỏi về kỹ thuật mà còn có tư duy sáng tạo và khả năng truyền tải thông điệp qua hình ảnh. Trong tương lai, mình sẽ tiếp tục nâng cao kỹ năng thiết kế, học thêm về UI/UX và lập trình web để mở rộng cơ hội trong ngành công nghiệp sáng tạo. Mục tiêu là xây dựng một portfolio ấn tượng, tham gia nhiều dự án thực tế hơn và có thể đóng góp vào những sản phẩm mang giá trị thẩm mỹ và ứng dụng cao.</p>
         <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
-    </section>
-
-    <!-- Đánh giá -->
-    <section id="feedback">
-        <h2>💬 Đánh giá</h2>
-        <p>Bạn nghĩ gì về mình? Hãy để lại nhận xét nhé!</p>
-        <form action="https://api.staticman.net/v3/entry/github/Hduchuy/my-portfolio/main/comments" method="POST">
-            <input type="hidden" name="options[slug]" value="feedback">
-            <input type="text" name="fields[name]" placeholder="Tên của bạn" required>
-            <textarea name="fields[message]" placeholder="Viết nhận xét của bạn tại đây..." required></textarea>
-            <button type="submit">Gửi đánh giá</button>
-        </form>
-        <div class="comments">
-            <!-- Bình luận sẽ hiển thị ở đây (cần thêm logic để đọc file từ thư mục comments) -->
-            <p><em>Hiện chưa có bình luận nào. Hãy là người đầu tiên để lại nhận xét nhé!</em></p>
-        </div>
     </section>
 
     <!-- Liên hệ -->
