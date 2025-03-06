@@ -1,8 +1,7 @@
 comments:
-  allowedOrigins: [hduchuy.id.vn, "localhost"]
+  allowedOrigins: [hduchuy.id.vn]
   branch: "main"
+  path: "comments/{options.slug}"
   format: "yaml"
   moderation: true
-  requiredFields: ["name", "email", "message"]
-  transforms:
-    email: md5
+  requiredFields: ["name", "message"]  # Chỉ bắt buộc nhập tên và bình luận
