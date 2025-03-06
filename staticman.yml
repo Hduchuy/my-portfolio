@@ -1,0 +1,8 @@
+comments:
+  allowedOrigins: [hduchuy.id.vn, "localhost"]
+  branch: "main"
+  format: "yaml"
+  moderation: true
+  requiredFields: ["name", "email", "message"]
+  transforms:
+    email: md5
