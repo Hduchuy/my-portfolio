@@ -1,7 +1,0 @@
-comments:
-  allowedOrigins: [hduchuy.id.vn]
-  branch: "main"
-  path: "comments/{options.slug}"
-  format: "yaml"
-  moderation: true
-  requiredFields: ["name", "message"]  # Chỉ bắt buộc nhập tên và bình luận
