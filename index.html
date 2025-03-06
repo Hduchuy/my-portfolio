@@ -22,7 +22,7 @@
         header {
             background-color: #ffb6c1; /* Hồng pastel đậm hơn cho header */
             text-align: center;
-            padding: 4rem 0 2rem;
+            padding: 2rem;
             position: relative;
         }
 
@@ -32,7 +32,7 @@
             border-radius: 50%;
             overflow: hidden;
             margin: 0 auto 1rem;
-            border: 5px solid #fff; /* Viền trắng quanh avatar */
+            border: 5px solid #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -48,16 +48,44 @@
             margin-bottom: 1rem;
         }
 
-        nav a {
+        /* Menu Button */
+        .menu-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
             color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
 
-        nav a:hover {
-            color: #ff69b4; /* Hồng đậm hơn khi hover */
+        /* Dropdown Menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 4rem;
+            right: 1rem;
+            background-color: #ff69b4;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown a:hover {
+            background-color: #ffb6c1;
+        }
+
+        .dropdown.active {
+            display: block;
         }
 
         /* Sections */
@@ -65,7 +93,7 @@
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
-            background-color: #fff; /* Nền trắng cho nội dung */
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
@@ -73,7 +101,7 @@
 
         section h2 {
             font-size: 1.8rem;
-            color: #ff69b4; /* Hồng đậm cho tiêu đề */
+            color: #ff69b4;
             margin-bottom: 1rem;
         }
 
@@ -106,6 +134,54 @@
             border-radius: 8px;
             margin-top: 1rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Feedback Form */
+        #feedback form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #feedback input, #feedback textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ff69b4;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #feedback textarea {
+            height: 100px;
+        }
+
+        #feedback button {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #feedback button:hover {
+            background-color: #ffb6c1;
+        }
+
+        /* Comments Display */
+        #feedback .comment {
+            border-top: 1px solid #ff69b4;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        #feedback .comment p {
+            font-style: italic;
+        }
+
+        #feedback .comment strong {
+            color: #ff69b4;
         }
 
         /* Contact */
@@ -143,12 +219,9 @@
                 width: 120px;
                 height: 120px;
             }
-            nav a {
-                display: block;
-                margin: 0.5rem 0;
-            }
-            section {
-                padding: 1.5rem;
+            .dropdown {
+                top: 3.5rem;
+                right: 0.5rem;
             }
             #contact .social-links {
                 flex-direction: column;
@@ -164,20 +237,22 @@
             <img src="https://github.com/Hduchuy/my-portfolio/blob/main/images/eeeenha.png?raw=true" alt="Avatar của Hoàng Đức Huy">
         </div>
         <h1>Hoàng Đức Huy (Fourth)</h1>
-        <nav>
+        <button class="menu-btn">☰</button>
+        <div class="dropdown">
             <a href="#intro">Giới thiệu</a>
             <a href="#skills">Kỹ năng & Sở thích</a>
             <a href="#workstyle">Phong cách làm việc</a>
             <a href="#projects">Dự án</a>
             <a href="#vision">Tầm nhìn</a>
+            <a href="#feedback">Đánh giá</a>
             <a href="#contact">Liên hệ</a>
-        </nav>
+        </div>
     </header>
 
     <!-- Giới thiệu bản thân -->
     <section id="intro">
         <h2>Giới thiệu bản thân</h2>
-        <p>Xin chào! Mình là Huy, sinh viên ngành Thiết kế Đồ họa tại Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU). Là một người đam mê sáng tạo, mình luôn tìm kiếm những cách thức mới để thể hiện ý tưởng thông qua màu sắc, bố cục và hình ảnh. Với sự nhạy bén trong thiết kế và khả năng quan sát chi tiết, mình mong muốn tạo ra những sản phẩm có giá trị thẩm mỹ cao và mang đến trải nghiệm ấn tượng cho người xem.</p>
+        <p>Xin chào! Mình là Fot, sinh viên ngành Thiết kế Đồ họa tại Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU). Là một người đam mê sáng tạo, mình luôn tìm kiếm những cách thức mới để thể hiện ý tưởng thông qua màu sắc, bố cục và hình ảnh. Với sự nhạy bén trong thiết kế và khả năng quan sát chi tiết, mình mong muốn tạo ra những sản phẩm có giá trị thẩm mỹ cao và mang đến trải nghiệm ấn tượng cho người xem.</p>
     </section>
 
     <!-- Kỹ năng & Sở thích -->
@@ -218,6 +293,22 @@
         <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
     </section>
 
+    <!-- Đánh giá -->
+    <section id="feedback">
+        <h2>💬 Đánh giá</h2>
+        <p>Bạn nghĩ gì về mình? Hãy để lại nhận xét nhé!</p>
+        <form action="https://api.staticman.net/v3/entry/github/Hduchuy/my-portfolio/main/comments" method="POST">
+            <input type="hidden" name="options[slug]" value="feedback">
+            <input type="text" name="fields[name]" placeholder="Tên của bạn" required>
+            <textarea name="fields[message]" placeholder="Viết nhận xét của bạn tại đây..." required></textarea>
+            <button type="submit">Gửi đánh giá</button>
+        </form>
+        <div class="comments">
+            <!-- Bình luận sẽ hiển thị ở đây (cần thêm logic để đọc file từ thư mục comments) -->
+            <p><em>Hiện chưa có bình luận nào. Hãy là người đầu tiên để lại nhận xét nhé!</em></p>
+        </div>
+    </section>
+
     <!-- Liên hệ -->
     <section id="contact">
         <h2>Liên hệ</h2>
@@ -237,5 +328,15 @@
     <footer>
         <p>© 2025 Hoàng Đức Huy (Fourth). All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript để toggle menu -->
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdown = document.querySelector('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
