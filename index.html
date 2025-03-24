@@ -26,7 +26,7 @@
         }
 
         body {
-            background-color: #fff0f5; /* Nền mặc định cho toàn bộ trang */
+            background-color: #fff0f5;
             color: #333;
             line-height: 1.6;
             scroll-behavior: smooth;
@@ -34,7 +34,7 @@
 
         /* Header (Thanh điều hướng cố định) */
         header {
-            background-color: #ff85a2; /* Hồng đậm hơn */
+            background-color: #ff85a2;
             padding: 1rem 2rem;
             position: fixed;
             top: 0;
@@ -50,28 +50,28 @@
             display: flex;
             align-items: center;
             color: #fff;
-            font-size: 1.2rem; /* Thu nhỏ kích thước chữ logo trên desktop */
+            font-size: 1.2rem;
             font-weight: 600;
         }
 
         header .logo img {
-            width: 40px; /* Thu nhỏ kích thước logo trên desktop */
+            width: 40px;
             height: 40px;
             margin-right: 0.5rem;
-            border-radius: 50%; /* Làm logo thành hình tròn */
-            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem; /* Thu nhỏ khoảng cách giữa các tag */
+            gap: 1.5rem;
         }
 
         header nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1rem; /* Thu nhỏ kích thước chữ tag */
+            font-size: 1rem;
             transition: color 0.3s;
         }
 
@@ -91,42 +91,46 @@
 
         /* Main Content (Đẩy xuống để không bị che bởi header cố định) */
         main {
-            padding-top: 80px; /* Giảm padding-top vì header nhỏ hơn */
+            padding-top: 80px;
         }
 
         /* Hero Section (Chứa hình nền, avatar và tên) */
         .hero-section {
             position: relative;
-            max-width: 1200px; /* Căn giữa giống các section khác */
-            margin: 0 auto; /* Căn giữa */
-            height: calc(100vh - 80px); /* Chiều cao vừa khít màn hình, trừ chiều cao header */
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 400px; /* Chiều cao cố định để tạo hình chữ nhật ngang trên desktop */
             background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
-            background-size: cover; /* Lấp đầy khu vực hero section */
-            background-position: center center; /* Căn giữa hình ảnh */
+            background-size: cover;
+            background-position: center center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: #fff;
-            border-radius: 10px; /* Bo góc giống các section khác */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Đổ bóng giống các section khác */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         .hero-section .avatar {
-            width: 150px; /* Kích thước avatar trên desktop */
+            width: 150px;
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 1.5rem;
             border: 5px solid #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero-section .avatar img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+            object-fit: cover;
+            object-position: center;
         }
 
         .hero-section .name-container {
@@ -141,38 +145,38 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Lớp mờ màu đen */
-            border-radius: 10px; /* Bo góc lớp mờ */
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
             z-index: 1;
         }
 
         .hero-section h1 {
             position: relative;
-            z-index: 2; /* Đặt chữ lên trên lớp mờ */
-            font-size: 3.5rem; /* Kích thước chữ trên desktop */
+            z-index: 2;
+            font-size: 3.5rem;
             font-weight: 600;
-            padding: 0.5rem 1rem; /* Khoảng cách bên trong lớp mờ */
+            padding: 0.5rem 1rem;
         }
 
         /* Sections */
         section {
-            padding: 3rem 2rem; /* Tăng padding để thoáng hơn */
+            padding: 3rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #fff; /* Nền trắng cho các section */
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            margin-bottom: 3rem; /* Tăng khoảng cách giữa các section */
+            margin-bottom: 3rem;
         }
 
         section h2 {
-            font-size: 2rem; /* Kích thước tiêu đề section */
+            font-size: 2rem;
             color: #ff69b4;
             margin-bottom: 1.5rem;
         }
 
         section p, section li {
-            font-size: 1.2rem; /* Kích thước chữ */
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
@@ -182,7 +186,7 @@
         }
 
         #skills h3 {
-            font-size: 1.5rem; /* Kích thước tiêu đề phụ */
+            font-size: 1.5rem;
             color: #ff69b4;
             margin-top: 1.5rem;
             margin-bottom: 0.8rem;
@@ -213,23 +217,22 @@
             display: block;
         }
 
-        /* Khung chứa hình ảnh */
         #portfolio .carousel-item .image-container {
             width: 100%;
-            max-width: 900px; /* Chiều rộng tối đa của khung */
-            margin: 0 auto; /* Căn giữa khung */
-            overflow: hidden; /* Ẩn phần hình ảnh vượt ra ngoài khung */
-            border-radius: 8px; /* Bo góc khung */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho khung */
-            text-align: center; /* Căn giữa nội dung bên trong */
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         #portfolio .carousel-item img {
-            max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng khung */
-            max-height: 500px; /* Chiều cao tối đa trên desktop */
-            object-fit: contain; /* Hình ảnh hiển thị đầy đủ, giữ tỷ lệ gốc */
-            object-position: center; /* Căn giữa hình ảnh */
-            display: inline-block; /* Đảm bảo hình ảnh không bị ảnh hưởng bởi các thuộc tính block */
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            object-position: center;
+            display: inline-block;
         }
 
         #portfolio .carousel-item img:hover {
@@ -238,7 +241,7 @@
         }
 
         #portfolio .carousel-item .case-study {
-            padding: 1.5rem; /* Tăng padding */
+            padding: 1.5rem;
             background-color: #fff0f5;
             border-radius: 8px;
             margin-top: 1rem;
@@ -257,7 +260,7 @@
             background-color: rgba(255, 105, 180, 0.7);
             color: #fff;
             border: none;
-            padding: 0.8rem 1.5rem; /* Kích thước nút */
+            padding: 0.8rem 1.5rem;
             cursor: pointer;
             font-size: 1.8rem;
             transition: background-color 0.3s;
@@ -269,13 +272,13 @@
 
         /* Blog */
         #blog .post {
-            margin-bottom: 2.5rem; /* Tăng khoảng cách giữa các bài post */
+            margin-bottom: 2.5rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid #ff69b4;
         }
 
         #blog .post h3 {
-            font-size: 1.6rem; /* Kích thước tiêu đề bài post */
+            font-size: 1.6rem;
             color: #ff69b4;
             margin-bottom: 0.8rem;
         }
@@ -296,7 +299,7 @@
             background-color: #ff69b4;
             color: #fff;
             border: none;
-            padding: 0.6rem 1.2rem; /* Kích thước nút */
+            padding: 0.6rem 1.2rem;
             border-radius: 5px;
             cursor: pointer;
             margin-top: 0.8rem;
@@ -311,26 +314,26 @@
         #collaboration form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem; /* Khoảng cách giữa các trường */
+            gap: 1.5rem;
         }
 
         #collaboration input, #collaboration textarea {
             width: 100%;
-            padding: 0.8rem; /* Padding */
+            padding: 0.8rem;
             border: 1px solid #ff69b4;
             border-radius: 5px;
-            font-size: 1.1rem; /* Kích thước chữ */
+            font-size: 1.1rem;
         }
 
         #collaboration textarea {
-            height: 120px; /* Chiều cao textarea */
+            height: 120px;
         }
 
         #collaboration button {
             background-color: #ff69b4;
             color: #fff;
             border: none;
-            padding: 0.8rem 1.5rem; /* Kích thước nút */
+            padding: 0.8rem 1.5rem;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -343,13 +346,13 @@
         /* Contact */
         #contact .social-links {
             display: flex;
-            gap: 2rem; /* Khoảng cách giữa các icon */
+            gap: 2rem;
             justify-content: center;
             margin-top: 1.5rem;
         }
 
         #contact .social-links a img {
-            width: 50px; /* Kích thước icon */
+            width: 50px;
             height: 50px;
             transition: transform 0.3s;
         }
@@ -363,24 +366,23 @@
             background-color: #ffb6c1;
             color: #fff;
             text-align: center;
-            padding: 1.5rem; /* Padding */
-            font-size: 1.1rem; /* Kích thước chữ */
+            padding: 1.5rem;
+            font-size: 1.1rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            /* Chỉnh header trên mobile: thêm nút menu hamburger */
             header {
-                justify-content: space-between; /* Đặt logo ở giữa, nút menu ở góc trái */
-                padding: 0.8rem 1rem; /* Giảm padding */
+                justify-content: space-between;
+                padding: 0.8rem 1rem;
             }
             .menu-toggle {
-                display: block; /* Hiển thị nút hamburger trên mobile */
+                display: block;
                 position: absolute;
                 left: 1rem;
             }
             header nav {
-                display: none; /* Ẩn menu mặc định */
+                display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -389,138 +391,128 @@
                 padding: 1rem;
             }
             header nav.active {
-                display: block; /* Hiển thị menu khi nhấn nút */
+                display: block;
             }
             header nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
             }
             header .logo {
-                font-size: 1.2rem; /* Kích thước chữ logo trên mobile */
+                font-size: 1.2rem;
                 justify-content: center;
                 flex-grow: 1;
             }
             header .logo img {
-                width: 35px; /* Kích thước logo trên mobile */
+                width: 35px;
                 height: 35px;
                 margin-right: 0.5rem;
             }
 
-            /* Main Content trên mobile */
             main {
-                padding-top: 60px; /* Giảm padding-top vì header nhỏ hơn */
+                padding-top: 60px;
             }
 
-            /* Hero Section trên mobile: hình chữ nhật ngang */
             .hero-section {
-                height: 250px; /* Chiều cao để tạo hình chữ nhật ngang */
-                margin: 0 1rem; /* Thêm margin hai bên để không sát mép */
-                background-size: cover; /* Lấp đầy khu vực hero section */
-                background-position: center center; /* Căn giữa hình ảnh */
+                height: 250px; /* Giữ hình chữ nhật ngang trên mobile */
+                margin: 0 1rem;
+                background-size: cover;
+                background-position: center center;
             }
             .hero-section .name-container::before {
-                display: none; /* Xóa lớp màu đen phía sau tên trên mobile */
+                display: none;
             }
             .hero-section h1 {
-                font-size: 1.5rem; /* Giảm kích thước chữ trên mobile */
-                padding: 0.3rem 0.8rem; /* Giảm padding */
+                font-size: 1.5rem;
+                padding: 0.3rem 0.8rem;
             }
             .hero-section .avatar {
-                width: 90px; /* Kích thước avatar trên mobile */
+                width: 90px;
                 height: 90px;
-                border-width: 3px; /* Giảm độ dày viền */
+                border-width: 3px;
                 margin-bottom: 1rem;
-                border-radius: 50%; /* Đảm bảo hình tròn */
-                overflow: hidden; /* Đảm bảo hình ảnh không tràn ra ngoài */
             }
             .hero-section .avatar img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+                object-fit: cover;
+                object-position: center;
             }
 
-            /* Sections trên mobile */
             section {
-                padding: 2rem 1.5rem; /* Giảm padding */
-                margin: 0 1rem; /* Thêm margin hai bên để không sát mép */
-                margin-bottom: 2rem; /* Giảm khoảng cách giữa các section */
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+                margin-bottom: 2rem;
             }
             section h2 {
-                font-size: 1.6rem; /* Giảm kích thước tiêu đề section */
+                font-size: 1.6rem;
                 margin-bottom: 1rem;
             }
             section p, section li {
-                font-size: 1rem; /* Giảm kích thước chữ */
+                font-size: 1rem;
                 margin-bottom: 0.8rem;
             }
 
-            /* Skills & Interests trên mobile */
             #skills h3 {
-                font-size: 1.3rem; /* Giảm kích thước tiêu đề phụ */
+                font-size: 1.3rem;
                 margin-top: 1rem;
                 margin-bottom: 0.5rem;
             }
 
-            /* Portfolio trên mobile */
             #portfolio .carousel-item .image-container {
-                max-width: 100%; /* Đảm bảo khung không vượt quá màn hình */
+                max-width: 100%;
             }
             #portfolio .carousel-item img {
-                max-height: 300px; /* Giảm chiều cao tối đa trên mobile */
+                max-height: 300px;
             }
             #portfolio .carousel-item .case-study {
-                padding: 1rem; /* Giảm padding */
+                padding: 1rem;
                 margin-top: 0.8rem;
             }
             #portfolio .carousel-nav button {
-                padding: 0.5rem 1rem; /* Giảm kích thước nút */
+                padding: 0.5rem 1rem;
                 font-size: 1.5rem;
             }
 
-            /* Blog trên mobile */
             #blog .post {
-                margin-bottom: 2rem; /* Giảm khoảng cách giữa các bài post */
+                margin-bottom: 2rem;
                 padding-bottom: 1rem;
             }
             #blog .post h3 {
-                font-size: 1.4rem; /* Giảm kích thước tiêu đề bài post */
+                font-size: 1.4rem;
                 margin-bottom: 0.5rem;
             }
             #blog .post .toggle-btn {
-                padding: 0.5rem 1rem; /* Giảm kích thước nút */
+                padding: 0.5rem 1rem;
                 margin-top: 0.5rem;
             }
 
-            /* Collaboration trên mobile */
             #collaboration form {
-                gap: 1rem; /* Giảm khoảng cách giữa các trường */
+                gap: 1rem;
             }
             #collaboration input, #collaboration textarea {
-                padding: 0.6rem; /* Giảm padding */
-                font-size: 1rem; /* Giảm kích thước chữ */
+                padding: 0.6rem;
+                font-size: 1rem;
             }
             #collaboration textarea {
-                height: 100px; /* Giảm chiều cao textarea */
+                height: 100px;
             }
             #collaboration button {
-                padding: 0.6rem 1.2rem; /* Giảm kích thước nút */
+                padding: 0.6rem 1.2rem;
             }
 
-            /* Contact trên mobile */
             #contact .social-links {
                 flex-direction: column;
-                gap: 1.5rem; /* Giảm khoảng cách giữa các icon */
+                gap: 1.5rem;
                 margin-top: 1rem;
             }
             #contact .social-links a img {
-                width: 40px; /* Giảm kích thước icon */
+                width: 40px;
                 height: 40px;
             }
 
-            /* Footer trên mobile */
             footer {
-                padding: 1rem; /* Giảm padding */
-                font-size: 0.9rem; /* Giảm kích thước chữ */
+                padding: 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -691,12 +683,12 @@
         <!-- Dự án hợp tác -->
         <section id="collaboration">
             <h2>🤝 Dự án hợp tác</h2>
-            <p>Bạn là một designer và muốn hợp tác với mình? Hãy điền thông tin dưới đây để chúng ta cùng tạo ra điều gì đó tuyệt vời!</p>
-            <form action="https://formspree.io/f/your-unique-id" method="POST">
+            <p>Bạn có ý tưởng, nhận xét, góp ý hay liên hệ với mình, hay cho mình biết thông tin của bạn nhé!</p>
+            <form action="https://formspree.io/f/mjkyrrde" method="POST">
                 <input type="text" name="name" placeholder="Tên của bạn" required>
                 <input type="email" name="email" placeholder="Email của bạn" required>
-                <textarea name="idea" placeholder="Ý tưởng dự án của bạn..." required></textarea>
-                <button type="submit">Gửi ý tưởng</button>
+                <textarea name="idea" placeholder="Ý tưởng, nhận xét, góp ý..." required></textarea>
+                <button type="submit">Gửi đi</button>
             </form>
         </section>
 
