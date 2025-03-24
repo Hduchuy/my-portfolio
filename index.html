@@ -50,14 +50,14 @@
             display: flex;
             align-items: center;
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.5rem; /* Tăng kích thước chữ logo trên desktop */
             font-weight: 600;
         }
 
         header .logo img {
-            width: 40px;
-            height: 40px;
-            margin-right: 0.5rem;
+            width: 45px; /* Tăng kích thước logo */
+            height: 45px;
+            margin-right: 0.8rem;
             border-radius: 50%; /* Làm logo thành hình tròn */
             object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
         }
@@ -65,13 +65,13 @@
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem; /* Tăng khoảng cách giữa các tag */
         }
 
         header nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.1rem; /* Tăng kích thước chữ tag */
             transition: color 0.3s;
         }
 
@@ -81,7 +81,7 @@
 
         /* Main Content (Đẩy xuống để không bị che bởi header cố định) */
         main {
-            padding-top: 80px; /* Khoảng cách để không bị header che */
+            padding-top: 90px; /* Tăng padding-top để không bị header che */
         }
 
         /* Hero Section (Chứa hình nền, avatar và tên) */
@@ -89,7 +89,7 @@
             position: relative;
             max-width: 1200px; /* Căn giữa giống các section khác */
             margin: 0 auto; /* Căn giữa */
-            height: calc(100vh - 80px); /* Chiều cao vừa khít màn hình, trừ chiều cao header */
+            height: calc(100vh - 90px); /* Chiều cao vừa khít màn hình, trừ chiều cao header */
             background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
             background-size: cover; /* Lấp đầy khu vực hero section */
             background-position: center center; /* Căn giữa hình ảnh */
@@ -104,11 +104,11 @@
         }
 
         .hero-section .avatar {
-            width: 120px;
-            height: 120px;
+            width: 150px; /* Tăng kích thước avatar trên desktop */
+            height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border: 5px solid #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -139,31 +139,31 @@
         .hero-section h1 {
             position: relative;
             z-index: 2; /* Đặt chữ lên trên lớp mờ */
-            font-size: 3rem;
+            font-size: 3.5rem; /* Tăng kích thước chữ trên desktop */
             font-weight: 600;
             padding: 0.5rem 1rem; /* Khoảng cách bên trong lớp mờ */
         }
 
         /* Sections */
         section {
-            padding: 2rem;
+            padding: 3rem 2rem; /* Tăng padding để thoáng hơn */
             max-width: 1200px;
             margin: 0 auto;
             background-color: #fff; /* Nền trắng cho các section */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
+            margin-bottom: 3rem; /* Tăng khoảng cách giữa các section */
         }
 
         section h2 {
-            font-size: 1.8rem;
+            font-size: 2rem; /* Tăng kích thước tiêu đề section */
             color: #ff69b4;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         section p, section li {
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.2rem; /* Tăng kích thước chữ */
+            margin-bottom: 1rem;
         }
 
         /* Skills & Interests */
@@ -172,10 +172,10 @@
         }
 
         #skills h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem; /* Tăng kích thước tiêu đề phụ */
             color: #ff69b4;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
         }
 
         #skills li::before {
@@ -206,7 +206,7 @@
         /* Khung chứa hình ảnh */
         #portfolio .carousel-item .image-container {
             width: 100%;
-            max-width: 800px; /* Chiều rộng tối đa của khung */
+            max-width: 900px; /* Tăng chiều rộng tối đa của khung */
             margin: 0 auto; /* Căn giữa khung */
             overflow: hidden; /* Ẩn phần hình ảnh vượt ra ngoài khung */
             border-radius: 8px; /* Bo góc khung */
@@ -216,7 +216,7 @@
 
         #portfolio .carousel-item img {
             max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng khung */
-            max-height: 400px; /* Giới hạn chiều cao tối đa để không quá lớn */
+            max-height: 500px; /* Tăng chiều cao tối đa trên desktop */
             object-fit: contain; /* Hình ảnh hiển thị đầy đủ, giữ tỷ lệ gốc */
             object-position: center; /* Căn giữa hình ảnh */
             display: inline-block; /* Đảm bảo hình ảnh không bị ảnh hưởng bởi các thuộc tính block */
@@ -228,9 +228,10 @@
         }
 
         #portfolio .carousel-item .case-study {
-            padding: 1rem;
+            padding: 1.5rem; /* Tăng padding */
             background-color: #fff0f5;
             border-radius: 8px;
+            margin-top: 1rem;
         }
 
         #portfolio .carousel-nav {
@@ -246,9 +247,9 @@
             background-color: rgba(255, 105, 180, 0.7);
             color: #fff;
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1.5rem; /* Tăng kích thước nút */
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             transition: background-color 0.3s;
         }
 
@@ -258,15 +259,15 @@
 
         /* Blog */
         #blog .post {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
+            margin-bottom: 2.5rem; /* Tăng khoảng cách giữa các bài post */
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid #ff69b4;
         }
 
         #blog .post h3 {
-            font-size: 1.4rem;
+            font-size: 1.6rem; /* Tăng kích thước tiêu đề bài post */
             color: #ff69b4;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         #blog .post .content-preview {
@@ -285,10 +286,10 @@
             background-color: #ff69b4;
             color: #fff;
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem; /* Tăng kích thước nút */
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 0.5rem;
+            margin-top: 0.8rem;
             transition: background-color 0.3s;
         }
 
@@ -300,26 +301,26 @@
         #collaboration form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem; /* Tăng khoảng cách giữa các trường */
         }
 
         #collaboration input, #collaboration textarea {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.8rem; /* Tăng padding */
             border: 1px solid #ff69b4;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 1.1rem; /* Tăng kích thước chữ */
         }
 
         #collaboration textarea {
-            height: 100px;
+            height: 120px; /* Tăng chiều cao textarea */
         }
 
         #collaboration button {
             background-color: #ff69b4;
             color: #fff;
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1.5rem; /* Tăng kích thước nút */
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -332,14 +333,14 @@
         /* Contact */
         #contact .social-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem; /* Tăng khoảng cách giữa các icon */
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         #contact .social-links a img {
-            width: 40px;
-            height: 40px;
+            width: 50px; /* Tăng kích thước icon */
+            height: 50px;
             transition: transform 0.3s;
         }
 
@@ -352,7 +353,8 @@
             background-color: #ffb6c1;
             color: #fff;
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem; /* Tăng padding */
+            font-size: 1.1rem; /* Tăng kích thước chữ */
         }
 
         /* Responsive */
@@ -360,44 +362,125 @@
             /* Chỉnh header trên mobile: chỉ hiển thị logo và tên, căn giữa */
             header {
                 justify-content: center; /* Căn giữa logo và tên */
-                padding: 0.5rem 1rem;
+                padding: 0.8rem 1rem; /* Giảm padding */
             }
             header nav {
                 display: none; /* Ẩn các tag điều hướng trên mobile */
             }
             header .logo {
-                font-size: 1rem;
+                font-size: 1.2rem; /* Giảm kích thước chữ logo trên mobile */
+            }
+            header .logo img {
+                width: 35px; /* Giảm kích thước logo trên mobile */
+                height: 35px;
+                margin-right: 0.5rem;
             }
 
-            /* Hero Section trên mobile */
+            /* Main Content trên mobile */
+            main {
+                padding-top: 60px; /* Giảm padding-top vì header nhỏ hơn */
+            }
+
+            /* Hero Section trên mobile: hình chữ nhật ngang */
             .hero-section {
-                height: calc(100vh - 60px); /* Điều chỉnh chiều cao trên màn hình nhỏ (header nhỏ hơn) */
+                height: 250px; /* Giảm chiều cao để tạo hình chữ nhật ngang */
                 margin: 0 1rem; /* Thêm margin hai bên để không sát mép */
+                background-size: cover; /* Lấp đầy khu vực hero section */
+                background-position: center center; /* Căn giữa hình ảnh */
             }
             .hero-section h1 {
-                font-size: 2rem;
+                font-size: 1.8rem; /* Giảm kích thước chữ trên mobile */
+                padding: 0.3rem 0.8rem; /* Giảm padding */
             }
             .hero-section .avatar {
-                width: 100px;
-                height: 100px;
+                width: 90px; /* Giảm kích thước avatar trên mobile */
+                height: 90px;
+                border-width: 3px; /* Giảm độ dày viền */
+                margin-bottom: 1rem;
             }
 
-            /* Các section khác */
+            /* Sections trên mobile */
             section {
+                padding: 2rem 1.5rem; /* Giảm padding */
                 margin: 0 1rem; /* Thêm margin hai bên để không sát mép */
+                margin-bottom: 2rem; /* Giảm khoảng cách giữa các section */
+            }
+            section h2 {
+                font-size: 1.6rem; /* Giảm kích thước tiêu đề section */
+                margin-bottom: 1rem;
+            }
+            section p, section li {
+                font-size: 1rem; /* Giảm kích thước chữ */
+                margin-bottom: 0.8rem;
             }
 
-            #contact .social-links {
-                flex-direction: column;
-                gap: 1rem;
+            /* Skills & Interests trên mobile */
+            #skills h3 {
+                font-size: 1.3rem; /* Giảm kích thước tiêu đề phụ */
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
             }
 
-            /* Điều chỉnh khung hình ảnh cho màn hình nhỏ */
+            /* Portfolio trên mobile */
             #portfolio .carousel-item .image-container {
                 max-width: 100%; /* Đảm bảo khung không vượt quá màn hình */
             }
             #portfolio .carousel-item img {
-                max-height: 300px; /* Giảm chiều cao tối đa trên màn hình nhỏ */
+                max-height: 300px; /* Giảm chiều cao tối đa trên mobile */
+            }
+            #portfolio .carousel-item .case-study {
+                padding: 1rem; /* Giảm padding */
+                margin-top: 0.8rem;
+            }
+            #portfolio .carousel-nav button {
+                padding: 0.5rem 1rem; /* Giảm kích thước nút */
+                font-size: 1.5rem;
+            }
+
+            /* Blog trên mobile */
+            #blog .post {
+                margin-bottom: 2rem; /* Giảm khoảng cách giữa các bài post */
+                padding-bottom: 1rem;
+            }
+            #blog .post h3 {
+                font-size: 1.4rem; /* Giảm kích thước tiêu đề bài post */
+                margin-bottom: 0.5rem;
+            }
+            #blog .post .toggle-btn {
+                padding: 0.5rem 1rem; /* Giảm kích thước nút */
+                margin-top: 0.5rem;
+            }
+
+            /* Collaboration trên mobile */
+            #collaboration form {
+                gap: 1rem; /* Giảm khoảng cách giữa các trường */
+            }
+            #collaboration input, #collaboration textarea {
+                padding: 0.6rem; /* Giảm padding */
+                font-size: 1rem; /* Giảm kích thước chữ */
+            }
+            #collaboration textarea {
+                height: 100px; /* Giảm chiều cao textarea */
+            }
+            #collaboration button {
+                padding: 0.6rem 1.2rem; /* Giảm kích thước nút */
+            }
+
+            /* Contact trên mobile */
+            #contact .social-links {
+                flex-direction: column;
+                gap: 1.5rem; /* Giảm khoảng cách giữa các icon */
+                margin-top: 1rem;
+            }
+            #contact .social-links a img {
+                width: 40px; /* Giảm kích thước icon */
+                height: 40px;
+            }
+
+            /* Footer trên mobile */
+            footer {
+                padding: 1rem; /* Giảm padding */
+                font-size: 0.9rem; /* Giảm kích thước chữ */
             }
         }
     </style>
