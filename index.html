@@ -90,8 +90,8 @@
             width: 100%;
             height: calc(100vh - 80px); /* Chiều cao vừa khít màn hình, trừ chiều cao header */
             background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
-            background-size: cover; /* Lấp đầy cả chiều ngang và chiều dọc */
-            background-position: center center; /* Căn giữa hình ảnh chính xác */
+            background-size: 100% auto; /* Đảm bảo lấp đầy bề ngang, chiều cao tự động điều chỉnh */
+            background-position: center center; /* Căn giữa hình ảnh */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -358,6 +358,8 @@
         @media (max-width: 768px) {
             .hero-section {
                 height: calc(100vh - 100px); /* Điều chỉnh chiều cao trên màn hình nhỏ */
+                background-size: 100% auto; /* Đảm bảo lấp đầy bề ngang trên màn hình nhỏ */
+                background-position: center center; /* Căn giữa hình ảnh */
             }
             .hero-section h1 {
                 font-size: 2rem;
@@ -391,6 +393,14 @@
             }
             #portfolio .carousel-item img {
                 max-height: 300px; /* Giảm chiều cao tối đa trên màn hình nhỏ */
+            }
+        }
+
+        /* Đảm bảo lấp đầy bề ngang trên các kích thước lớn hơn */
+        @media (min-width: 1200px) {
+            .hero-section {
+                background-size: 100% auto; /* Đảm bảo lấp đầy bề ngang */
+                background-position: center center; /* Căn giữa hình ảnh */
             }
         }
     </style>
