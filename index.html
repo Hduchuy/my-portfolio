@@ -58,6 +58,8 @@
             width: 40px;
             height: 40px;
             margin-right: 0.5rem;
+            border-radius: 50%; /* Làm logo thành hình tròn */
+            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
         }
 
         header nav ul {
@@ -150,30 +152,66 @@
             color: #ff69b4;
         }
 
-        /* Portfolio (Tác phẩm) */
-        #portfolio .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 cột, mỗi cột chiếm 50% */
-            gap: 2rem;
+        /* Portfolio (Tác phẩm) - Carousel */
+        #portfolio .carousel {
+            position: relative;
+            overflow: hidden;
         }
 
-        #portfolio .gallery img {
+        #portfolio .carousel-items {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #portfolio .carousel-item {
+            min-width: 100%;
+            display: none;
+        }
+
+        #portfolio .carousel-item.active {
+            display: block;
+        }
+
+        #portfolio .carousel-item img {
             width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        #portfolio .carousel-item img:hover {
+            transform: scale(1.05);
             transition: transform 0.3s;
         }
 
-        #portfolio .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        #portfolio .case-study {
-            margin-top: 2rem;
+        #portfolio .carousel-item .case-study {
             padding: 1rem;
             background-color: #fff0f5;
             border-radius: 8px;
+        }
+
+        #portfolio .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        #portfolio .carousel-nav button {
+            background-color: rgba(255, 105, 180, 0.7);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background-color 0.3s;
+        }
+
+        #portfolio .carousel-nav button:hover {
+            background-color: #ff69b4;
         }
 
         /* Blog */
@@ -187,6 +225,33 @@
             font-size: 1.4rem;
             color: #ff69b4;
             margin-bottom: 0.5rem;
+        }
+
+        #blog .post .content-preview {
+            display: block;
+        }
+
+        #blog .post .content-full {
+            display: none;
+        }
+
+        #blog .post .content-full.active {
+            display: block;
+        }
+
+        #blog .post .toggle-btn {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s;
+        }
+
+        #blog .post .toggle-btn:hover {
+            background-color: #ffb6c1;
         }
 
         /* Collaboration */
@@ -276,9 +341,6 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-            #portfolio .gallery {
-                grid-template-columns: 1fr; /* Xếp chồng trên mobile */
-            }
         }
     </style>
 </head>
@@ -344,24 +406,34 @@
             <p>Mình là một người có tinh thần trách nhiệm, luôn đặt chất lượng lên hàng đầu trong mọi sản phẩm thiết kế. Luôn tiếp cận công việc với sự sáng tạo, linh hoạt và không ngại thử nghiệm những ý tưởng mới. Làm việc nhóm hiệu quả, biết cách lắng nghe, chia sẻ và kết nối để tạo ra giá trị chung. Đồng thời, mình cũng chú trọng vào việc tự học hỏi và phát triển bản thân qua từng dự án thực tế.</p>
         </section>
 
-        <!-- Tác phẩm (Portfolio) -->
+        <!-- Tác phẩm (Portfolio) - Carousel -->
         <section id="portfolio">
             <h2>🎨 Tác phẩm</h2>
-            <div class="gallery">
-                <img src="https://github.com/Hduchuy/my-portfolio/blob/main/images/vutru.png?raw=true" alt="Dự án Vũ Trụ">
-                <img src="https://i.imgur.com/UGXEgwF.png" alt="Dự án ICTU Creative Festival">
-            </div>
-            <div class="case-study">
-                <h3>Case Study: Dự án Vũ Trụ</h3>
-                <p><strong>Ý tưởng:</strong> Đây là sản phẩm đầu tiên trong đời thiết kế của mình, lấy cảm hứng từ vũ trụ và các hành tinh.</p>
-                <p><strong>Thách thức:</strong> Làm sao để cân bằng màu sắc và bố cục để tạo cảm giác huyền bí nhưng vẫn dễ nhìn.</p>
-                <p><strong>Giải pháp:</strong> Sử dụng gradient màu tím và xanh, kết hợp với các hiệu ứng ánh sáng để tạo chiều sâu.</p>
-            </div>
-            <div class="case-study">
-                <h3>Case Study: Dự án ICTU Creative Festival</h3>
-                <p><strong>Ý tưởng:</strong> Thiết kế poster quảng bá cho sự kiện "ICTU Creative Festival" tại ICTU, với mục tiêu thu hút sinh viên tham gia qua phong cách hiện đại, trẻ trung.</p>
-                <p><strong>Thách thức:</strong> Làm sao để kết hợp các yếu tố neon, ánh sáng và thông tin sự kiện một cách hài hòa, nổi bật nhưng không rối mắt.</p>
-                <p><strong>Giải pháp:</strong> Sử dụng tông màu tím và hồng neon, kết hợp hiệu ứng ánh sáng và bố cục bất đối xứng để tạo cảm giác năng động. Đặt thông tin chính (thời gian, địa điểm) ở vị trí dễ nhìn, đồng thời thêm các chi tiết như "Free participation" để thu hút người xem.</p>
+            <div class="carousel">
+                <div class="carousel-items">
+                    <div class="carousel-item active">
+                        <img src="https://github.com/Hduchuy/my-portfolio/blob/main/images/vutru.png?raw=true" alt="Dự án Vũ Trụ">
+                        <div class="case-study">
+                            <h3>Case Study: Dự án Vũ Trụ</h3>
+                            <p><strong>Ý tưởng:</strong> Đây là sản phẩm đầu tiên trong đời thiết kế của mình, lấy cảm hứng từ vũ trụ và các hành tinh.</p>
+                            <p><strong>Thách thức:</strong> Làm sao để cân bằng màu sắc và bố cục để tạo cảm giác huyền bí nhưng vẫn dễ nhìn.</p>
+                            <p><strong>Giải pháp:</strong> Sử dụng gradient màu tím và xanh, kết hợp với các hiệu ứng ánh sáng để tạo chiều sâu.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/UGXEgwF.png" alt="Dự án ICTU Creative Festival">
+                        <div class="case-study">
+                            <h3>Case Study: Dự án ICTU Creative Festival</h3>
+                            <p><strong>Ý tưởng:</strong> Thiết kế poster quảng bá cho sự kiện "ICTU Creative Festival" tại ICTU, với mục tiêu thu hút sinh viên tham gia qua phong cách hiện đại, trẻ trung.</p>
+                            <p><strong>Thách thức:</strong> Làm sao để kết hợp các yếu tố neon, ánh sáng và thông tin sự kiện một cách hài hòa, nổi bật nhưng không rối mắt.</p>
+                            <p><strong>Giải pháp:</strong> Sử dụng tông màu tím và hồng neon, kết hợp hiệu ứng ánh sáng và bố cục bất đối xứng để tạo cảm giác năng động. Đặt thông tin chính (thời gian, địa điểm) ở vị trí dễ nhìn, đồng thời thêm các chi tiết như "Free participation" để thu hút người xem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="prev">←</button>
+                    <button class="next">→</button>
+                </div>
             </div>
         </section>
 
@@ -369,12 +441,62 @@
         <section id="blog">
             <h2>📝 Blog</h2>
             <div class="post">
-                <h3>Cách sử dụng Photoshop để tạo hiệu ứng ánh sáng</h3>
-                <p>Trong bài viết này, mình sẽ chia sẻ cách sử dụng Photoshop để tạo hiệu ứng ánh sáng cho các thiết kế của bạn. Bắt đầu với việc chọn một layer mới, sau đó...</p>
+                <h3>Top 5 Phần Mềm Thiết Kế Đồ Họa Cho Người Mới Bắt Đầu</h3>
+                <div class="content-preview">
+                    <p>Mỗi phần mềm đều có điểm mạnh riêng phù hợp với nhu cầu khác nhau. Dưới đây là 5 phần mềm thiết kế đồ họa mà mình khuyên dùng cho người mới bắt đầu...</p>
+                </div>
+                <div class="content-full">
+                    <h4>1. Adobe Photoshop</h4>
+                    <p>🌟 <strong>Phù hợp với:</strong> Chỉnh sửa ảnh, thiết kế banner, poster, UI/UX.</p>
+                    <p>Là một trong những phần mềm thiết kế đồ họa mạnh mẽ nhất, Photoshop cung cấp các công cụ vẽ và chỉnh sửa ảnh chuyên nghiệp. Người mới bắt đầu có thể học nhanh nhờ giao diện trực quan và nhiều tài nguyên hỗ trợ.</p>
+                    <h4>2. Adobe Illustrator</h4>
+                    <p>🌟 <strong>Phù hợp với:</strong> Vẽ vector, logo, icon, in ấn.</p>
+                    <p>Illustrator là phần mềm chuyên dùng để thiết kế vector, các sản phẩm có thể phóng to vô hạn mà không bị nhòa. Nếu bé iu muốn thiết kế logo hoặc icon chuyên nghiệp, đây là lựa chọn hoàn hảo.</p>
+                    <h4>3. Canva</h4>
+                    <p>🌟 <strong>Phù hợp với:</strong> Thiết kế nhanh chóng, template sẵn, poster, bài đăng MXH.</p>
+                    <p>Canva là một công cụ thiết kế trực quan, dễ sử dụng, thích hợp với người mới bắt đầu. Kho giao diện sẵn phong phú, chỉ cần kéo thả và chỉnh sửa.</p>
+                    <h4>4. Figma</h4>
+                    <p>🌟 <strong>Phù hợp với:</strong> Thiết kế UI/UX, wireframe, prototype.</p>
+                    <p>Figma hoạt động trên nền tảng web và có tính năng làm việc nhóm vô cùng tiện lợi. Bé iu muốn thiết kế giao diện web hay app thì Figma là sự lựa chọn tốt.</p>
+                    <h4>5. Procreate</h4>
+                    <p>🌟 <strong>Phù hợp với:</strong> Vẽ minh họa, digital painting.</p>
+                    <p>Dành cho người yêu vẽ tay trên iPad, Procreate mang đến trải nghiệm vẽ kéo thật tự nhiên. Có thể sử dụng kèm Apple Pencil để tạo nên những bức vẽ sắc nét.</p>
+                    <h4>Kết Luận</h4>
+                    <p>Mỗi phần mềm đều có điểm mạnh riêng phù hợp với nhu cầu khác nhau. Nếu bé iu muốn chỉnh sửa ảnh, hãy dùng Photoshop. Muốn thiết kế vector? Illustrator sẽ là lựa chọn tốt nhất. Còn Canva và Figma là lựa chọn hoàn hảo cho thiết kế nhanh và UI/UX. Hãy bắt đầu và tìm ra công cụ phù hợp nhất với bạn nha! 🌟</p>
+                </div>
+                <button class="toggle-btn" onclick="toggleContent(this)">Hiện thêm</button>
             </div>
             <div class="post">
-                <h3>Top 5 phần mềm thiết kế đồ họa cho người mới bắt đầu</h3>
-                <p>Nếu bạn mới bắt đầu với thiết kế đồ họa, đây là 5 phần mềm mình khuyên dùng: Photoshop, Illustrator, Canva, Figma, và Procreate...</p>
+                <h3>Cách Sử Dụng Photoshop Để Tạo Hiệu Ứng Ánh Sáng</h3>
+                <div class="content-preview">
+                    <p>Hiệu ứng ánh sáng trong thiết kế đồ họa có thể tạo ra điểm nhấn đặc biệt, giúp tác phẩm trở nên sinh động và thu hút hơn. Dưới đây là các bước đơn giản để tạo hiệu ứng ánh sáng trong Photoshop...</p>
+                </div>
+                <div class="content-full">
+                    <h4>Giới Thiệu</h4>
+                    <p>Hiệu ứng ánh sáng trong thiết kế đồ họa có thể tạo ra điểm nhấn đặc biệt, giúp tác phẩm trở nên sinh động và thu hút hơn. Trong bài viết này, chúng ta sẽ tìm hiểu cách sử dụng Photoshop để tạo hiệu ứng ánh sáng đơn giản nhưng đầy ấn tượng.</p>
+                    <h4>Bước 1: Tạo Một Layer Mới</h4>
+                    <p>Mở Photoshop và chọn hình ảnh bạn muốn áp dụng hiệu ứng ánh sáng. Sau đó, tạo một layer mới bằng cách nhấn <strong>Ctrl + Shift + N</strong> hoặc vào <strong>Layer > New > Layer</strong>.</p>
+                    <h4>Bước 2: Chọn Công Cụ Brush Tool</h4>
+                    <p>Chọn công cụ <strong>Brush Tool (B)</strong> và đặt màu Foreground là màu sáng (ví dụ: vàng hoặc trắng tùy theo phong cách mong muốn).</p>
+                    <ul>
+                        <li>Điều chỉnh kích thước brush bằng phím <strong>[</strong> hoặc <strong>]</strong>.</li>
+                        <li>Chọn một brush mềm (Soft Round) để tạo ánh sáng mượt mà.</li>
+                    </ul>
+                    <h4>Bước 3: Tạo Hiệu Ứng Phát Sáng</h4>
+                    <p>Vẽ lên khu vực bạn muốn ánh sáng xuất hiện.</p>
+                    <p>Thay đổi chế độ hòa trộn (Blending Mode) của layer thành <strong>Screen</strong> hoặc <strong>Overlay</strong> để làm sáng hình ảnh tự nhiên hơn.</p>
+                    <p>Giảm <strong>Opacity</strong> nếu cần để hiệu ứng hòa hợp hơn với nền.</p>
+                    <h4>Bước 4: Thêm Hiệu Ứng Glow</h4>
+                    <p>Nhấn <strong>Ctrl + J</strong> để nhân đôi layer ánh sáng.</p>
+                    <p>Vào <strong>Filter > Blur > Gaussian Blur</strong> và điều chỉnh <strong>Radius</strong> để làm mờ ánh sáng, tạo hiệu ứng phát sáng mềm mại.</p>
+                    <p>Kết hợp nhiều lớp với độ mờ khác nhau để tăng độ chân thực.</p>
+                    <h4>Bước 5: Điều Chỉnh Màu Sắc</h4>
+                    <p>Sử dụng <strong>Adjustment Layers</strong> như <strong>Hue/Saturation</strong> hoặc <strong>Color Balance</strong> để chỉnh màu ánh sáng theo ý thích.</p>
+                    <p>Có thể thêm <strong>Gradient Map</strong> để tạo hiệu ứng chuyển màu độc đáo.</p>
+                    <h4>Kết Luận</h4>
+                    <p>Với các bước đơn giản trên, bạn có thể dễ dàng tạo ra những hiệu ứng ánh sáng đẹp mắt trên Photoshop. Hãy thử nghiệm nhiều cách khác nhau để phát triển phong cách riêng của bạn nhé!</p>
+                </div>
+                <button class="toggle-btn" onclick="toggleContent(this)">Hiện thêm</button>
             </div>
         </section>
 
@@ -423,5 +545,53 @@
             <p>© 2025 Hoàng Đức Huy (Fourth). All rights reserved.</p>
         </footer>
     </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Carousel cho section Tác phẩm
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.querySelector('.carousel-nav .prev');
+        const nextBtn = document.querySelector('.carousel-nav .next');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            carouselItems.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            showSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            showSlide(currentIndex);
+        });
+
+        // Khởi tạo slide đầu tiên
+        showSlide(currentIndex);
+
+        // Toggle nội dung blog
+        function toggleContent(btn) {
+            const post = btn.parentElement;
+            const contentFull = post.querySelector('.content-full');
+            const contentPreview = post.querySelector('.content-preview');
+
+            if (contentFull.classList.contains('active')) {
+                contentFull.classList.remove('active');
+                contentPreview.style.display = 'block';
+                btn.textContent = 'Hiện thêm';
+            } else {
+                contentFull.classList.add('active');
+                contentPreview.style.display = 'none';
+                btn.textContent = 'Ẩn bớt';
+            }
+        }
+    </script>
 </body>
 </html>
