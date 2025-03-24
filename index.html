@@ -32,12 +32,61 @@
             scroll-behavior: smooth;
         }
 
-        /* Header */
+        /* Header (Thanh điều hướng cố định) */
         header {
+            background-color: #ff85a2; /* Hồng đậm hơn */
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        header .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #fff0f5;
+        }
+
+        /* Main Content (Đẩy xuống để không bị che bởi header cố định) */
+        main {
+            padding-top: 80px; /* Khoảng cách để không bị header che */
+        }
+
+        /* Avatar Section */
+        .avatar-section {
             background-color: #ffb6c1;
             text-align: center;
             padding: 2rem;
-            position: relative;
         }
 
         .avatar {
@@ -56,50 +105,10 @@
             object-fit: cover;
         }
 
-        header h1 {
+        .avatar-section h1 {
             font-size: 2.5rem;
             color: #fff;
             margin-bottom: 1rem;
-        }
-
-        /* Menu Button */
-        .menu-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 2rem;
-            color: #fff;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Dropdown Menu */
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 4rem;
-            right: 1rem;
-            background-color: #ff69b4;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .dropdown a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1.1rem;
-            transition: background-color 0.3s;
-        }
-
-        .dropdown a:hover {
-            background-color: #ffb6c1;
-        }
-
-        .dropdown.active {
-            display: block;
         }
 
         /* Sections */
@@ -241,16 +250,27 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
+            .avatar-section h1 {
                 font-size: 2rem;
             }
             .avatar {
                 width: 120px;
                 height: 120px;
             }
-            .dropdown {
-                top: 3.5rem;
-                right: 0.5rem;
+            header {
+                flex-wrap: wrap;
+                padding: 0.5rem 1rem;
+            }
+            header .logo {
+                font-size: 1rem;
+            }
+            header nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            header nav ul li a {
+                font-size: 0.9rem;
             }
             #contact .social-links {
                 flex-direction: column;
@@ -260,139 +280,141 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header (Thanh điều hướng cố định) -->
     <header>
-        <div class="avatar">
-            <img src="https://github.com/Hduchuy/my-portfolio/blob/main/images/eeeenha.png?raw=true" alt="Avatar của Hoàng Đức Huy">
+        <div class="logo">
+            <img src="https://via.placeholder.com/40" alt="Logo">
+            <span>Hoàng Đức Huy (Fourth)</span>
         </div>
-        <h1>Hoàng Đức Huy (Fourth)</h1>
-        <button class="menu-btn">☰</button>
-        <div class="dropdown">
-            <a href="#intro">Giới thiệu</a>
-            <a href="#skills">Kỹ năng & Sở thích</a>
-            <a href="#workstyle">Phong cách làm việc</a>
-            <a href="#portfolio">Tác phẩm</a>
-            <a href="#blog">Blog</a>
-            <a href="#collaboration">Dự án hợp tác</a>
-            <a href="#shop">Cửa hàng</a>
-            <a href="#vision">Tầm nhìn</a>
-            <a href="#contact">Liên hệ</a>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">Giới thiệu</a></li>
+                <li><a href="#skills">Kỹ năng & Sở thích</a></li>
+                <li><a href="#workstyle">Phong cách làm việc</a></li>
+                <li><a href="#portfolio">Tác phẩm</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#collaboration">Dự án hợp tác</a></li>
+                <li><a href="#shop">Cửa hàng</a></li>
+                <li><a href="#vision">Tầm nhìn</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Giới thiệu bản thân -->
-    <section id="intro">
-        <h2>Giới thiệu bản thân</h2>
-        <p>Xin chào! Mình là Đức Huy, sinh viên năm nhất ngành Thiết kế Đồ họa tại Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU). Là một người đam mê sáng tạo, mình luôn tìm kiếm những cách thức mới để thể hiện ý tưởng thông qua màu sắc, bố cục và hình ảnh. Với sự nhạy bén trong thiết kế và khả năng quan sát chi tiết, mình mong muốn tạo ra những sản phẩm có giá trị thẩm mỹ cao và mang đến trải nghiệm ấn tượng cho người xem.</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Avatar Section -->
+        <section class="avatar-section">
+            <div class="avatar">
+                <img src="https://github.com/Hduchuy/my-portfolio/blob/main/images/eeeenha.png?raw=true" alt="Avatar của Hoàng Đức Huy">
+            </div>
+            <h1>Hoàng Đức Huy (Fourth)</h1>
+        </section>
 
-    <!-- Kỹ năng & Sở thích -->
-    <section id="skills">
-        <h2>Kỹ năng & Sở thích</h2>
-        <h3>Kỹ năng</h3>
-        <ul>
-            <li><strong>Thiết kế đồ họa:</strong> Thành thạo Photoshop và có khả năng sử dụng màu sắc, bố cục để tạo ra các thiết kế ấn tượng.</li>
-            <li><strong>Vẽ tay & Hội họa:</strong> Sử dụng màu nước acrylic để tạo ra các tác phẩm nghệ thuật sáng tạo.</li>
-            <li><strong>Lập trình web:</strong> Đang tìm hiểu về lập trình web, đặc biệt quan tâm đến việc phát triển giao diện và trải nghiệm người dùng.</li>
-            <li><strong>Chỉnh sửa video:</strong> Có kinh nghiệm làm phim ngắn về cuộc sống sinh viên và các hoạt động tại ICTU.</li>
-        </ul>
-        <h3>Sở thích</h3>
-        <ul>
-            <li>Chơi Liên Quân và Minecraft, thích khám phá công nghệ và các công cụ sáng tạo.</li>
-            <li>Yêu thích thiết kế, hội họa, và không ngừng nâng cao gu thẩm mỹ.</li>
-            <li>Đam mê trải nghiệm các hoạt động ngoại khóa, câu lạc bộ và các dự án sáng tạo tại trường.</li>
-        </ul>
-    </section>
+        <!-- Giới thiệu bản thân -->
+        <section id="intro">
+            <h2>Giới thiệu bản thân</h2>
+            <p>Xin chào! Mình là Đức Huy, sinh viên năm nhất ngành Thiết kế Đồ họa tại Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU). Là một người đam mê sáng tạo, mình luôn tìm kiếm những cách thức mới để thể hiện ý tưởng thông qua màu sắc, bố cục và hình ảnh. Với sự nhạy bén trong thiết kế và khả năng quan sát chi tiết, mình mong muốn tạo ra những sản phẩm có giá trị thẩm mỹ cao và mang đến trải nghiệm ấn tượng cho người xem.</p>
+        </section>
 
-    <!-- Phong cách làm việc -->
-    <section id="workstyle">
-        <h2>📌 Phong cách làm việc</h2>
-        <p>Mình là một người có tinh thần trách nhiệm, luôn đặt chất lượng lên hàng đầu trong mọi sản phẩm thiết kế. Luôn tiếp cận công việc với sự sáng tạo, linh hoạt và không ngại thử nghiệm những ý tưởng mới. Làm việc nhóm hiệu quả, biết cách lắng nghe, chia sẻ và kết nối để tạo ra giá trị chung. Đồng thời, mình cũng chú trọng vào việc tự học hỏi và phát triển bản thân qua từng dự án thực tế.</p>
-    </section>
+        <!-- Kỹ năng & Sở thích -->
+        <section id="skills">
+            <h2>Kỹ năng & Sở thích</h2>
+            <h3>Kỹ năng</h3>
+            <ul>
+                <li><strong>Thiết kế đồ họa:</strong> Thành thạo Photoshop và có khả năng sử dụng màu sắc, bố cục để tạo ra các thiết kế ấn tượng.</li>
+                <li><strong>Vẽ tay & Hội họa:</strong> Sử dụng màu nước acrylic để tạo ra các tác phẩm nghệ thuật sáng tạo.</li>
+                <li><strong>Lập trình web:</strong> Đang tìm hiểu về lập trình web, đặc biệt quan tâm đến việc phát triển giao diện và trải nghiệm người dùng.</li>
+                <li><strong>Chỉnh sửa video:</strong> Có kinh nghiệm làm phim ngắn về cuộc sống sinh viên và các hoạt động tại ICTU.</li>
+            </ul>
+            <h3>Sở thích</h3>
+            <ul>
+                <li>Chơi Liên Quân và Minecraft, thích khám phá công nghệ và các công cụ sáng tạo.</li>
+                <li>Yêu thích thiết kế, hội họa, và không ngừng nâng cao gu thẩm mỹ.</li>
+                <li>Đam mê trải nghiệm các hoạt động ngoại khóa, câu lạc bộ và các dự án sáng tạo tại trường.</li>
+            </ul>
+        </section>
 
-    <!-- Tác phẩm (Portfolio) -->
-    <section id="portfolio">
-        <h2>🎨 Tác phẩm</h2>
-        <div class="gallery">
-            <img src="https://github.com/Hduchuy/my-portfolio/blob/main/images/vutru.png?raw=true" alt="Dự án Vũ Trụ">
-            <img src="https://via.placeholder.com/300x200" alt="Dự án 2">
-            <img src="https://via.placeholder.com/300x200" alt="Dự án 3">
-            <img src="https://via.placeholder.com/300x200" alt="Dự án 4">
-        </div>
-        <div class="case-study">
-            <h3>Case Study: Dự án Vũ Trụ</h3>
-            <p><strong>Ý tưởng:</strong> Đây là sản phẩm đầu tiên trong đời thiết kế của mình, lấy cảm hứng từ vũ trụ và các hành tinh.</p>
-            <p><strong>Thách thức:</strong> Làm sao để cân bằng màu sắc và bố cục để tạo cảm giác huyền bí nhưng vẫn dễ nhìn.</p>
-            <p><strong>Giải pháp:</strong> Sử dụng gradient màu tím và xanh, kết hợp với các hiệu ứng ánh sáng để tạo chiều sâu.</p>
-        </div>
-    </section>
+        <!-- Phong cách làm việc -->
+        <section id="workstyle">
+            <h2>📌 Phong cách làm việc</h2>
+            <p>Mình là một người có tinh thần trách nhiệm, luôn đặt chất lượng lên hàng đầu trong mọi sản phẩm thiết kế. Luôn tiếp cận công việc với sự sáng tạo, linh hoạt và không ngại thử nghiệm những ý tưởng mới. Làm việc nhóm hiệu quả, biết cách lắng nghe, chia sẻ và kết nối để tạo ra giá trị chung. Đồng thời, mình cũng chú trọng vào việc tự học hỏi và phát triển bản thân qua từng dự án thực tế.</p>
+        </section>
 
-    <!-- Blog -->
-    <section id="blog">
-        <h2>📝 Blog</h2>
-        <div class="post">
-            <h3>Cách sử dụng Photoshop để tạo hiệu ứng ánh sáng</h3>
-            <p>Trong bài viết này, mình sẽ chia sẻ cách sử dụng Photoshop để tạo hiệu ứng ánh sáng cho các thiết kế của bạn. Bắt đầu với việc chọn một layer mới, sau đó...</p>
-        </div>
-        <div class="post">
-            <h3>Top 5 phần mềm thiết kế đồ họa cho người mới bắt đầu</h3>
-            <p>Nếu bạn mới bắt đầu với thiết kế đồ họa, đây là 5 phần mềm mình khuyên dùng: Photoshop, Illustrator, Canva, Figma, và Procreate...</p>
-        </div>
-    </section>
+        <!-- Tác phẩm (Portfolio) -->
+        <section id="portfolio">
+            <h2>🎨 Tác phẩm</h2>
+            <div class="gallery">
+                <img src="https://github.com/Hduchuy/my-portfolio/blob/main/images/vutru.png?raw=true" alt="Dự án Vũ Trụ">
+                <img src="https://via.placeholder.com/300x200" alt="Dự án 2">
+                <img src="https://via.placeholder.com/300x200" alt="Dự án 3">
+                <img src="https://via.placeholder.com/300x200" alt="Dự án 4">
+            </div>
+            <div class="case-study">
+                <h3>Case Study: Dự án Vũ Trụ</h3>
+                <p><strong>Ý tưởng:</strong> Đây là sản phẩm đầu tiên trong đời thiết kế của mình, lấy cảm hứng từ vũ trụ và các hành tinh.</p>
+                <p><strong>Thách thức:</strong> Làm sao để cân bằng màu sắc và bố cục để tạo cảm giác huyền bí nhưng vẫn dễ nhìn.</p>
+                <p><strong>Giải pháp:</strong> Sử dụng gradient màu tím và xanh, kết hợp với các hiệu ứng ánh sáng để tạo chiều sâu.</p>
+            </div>
+        </section>
 
-    <!-- Dự án hợp tác -->
-    <section id="collaboration">
-        <h2>🤝 Dự án hợp tác</h2>
-        <p>Bạn là một designer và muốn hợp tác với mình? Hãy điền thông tin dưới đây để chúng ta cùng tạo ra điều gì đó tuyệt vời!</p>
-        <form>
-            <input type="text" name="name" placeholder="Tên của bạn" required>
-            <input type="email" name="email" placeholder="Email của bạn" required>
-            <textarea name="idea" placeholder="Ý tưởng dự án của bạn..." required></textarea>
-            <button type="submit">Gửi ý tưởng</button>
-        </form>
-    </section>
+        <!-- Blog -->
+        <section id="blog">
+            <h2>📝 Blog</h2>
+            <div class="post">
+                <h3>Cách sử dụng Photoshop để tạo hiệu ứng ánh sáng</h3>
+                <p>Trong bài viết này, mình sẽ chia sẻ cách sử dụng Photoshop để tạo hiệu ứng ánh sáng cho các thiết kế của bạn. Bắt đầu với việc chọn một layer mới, sau đó...</p>
+            </div>
+            <div class="post">
+                <h3>Top 5 phần mềm thiết kế đồ họa cho người mới bắt đầu</h3>
+                <p>Nếu bạn mới bắt đầu với thiết kế đồ họa, đây là 5 phần mềm mình khuyên dùng: Photoshop, Illustrator, Canva, Figma, và Procreate...</p>
+            </div>
+        </section>
 
-    <!-- Cửa hàng (Để trống) -->
-    <section id="shop">
-        <h2>🛒 Cửa hàng</h2>
-        <p><em>Hiện tại chưa có sản phẩm nào. Hãy quay lại sau nhé!</em></p>
-    </section>
+        <!-- Dự án hợp tác -->
+        <section id="collaboration">
+            <h2>🤝 Dự án hợp tác</h2>
+            <p>Bạn là một designer và muốn hợp tác với mình? Hãy điền thông tin dưới đây để chúng ta cùng tạo ra điều gì đó tuyệt vời!</p>
+            <form>
+                <input type="text" name="name" placeholder="Tên của bạn" required>
+                <input type="email" name="email" placeholder="Email của bạn" required>
+                <textarea name="idea" placeholder="Ý tưởng dự án của bạn..." required></textarea>
+                <button type="submit">Gửi ý tưởng</button>
+            </form>
+        </section>
 
-    <!-- Tầm nhìn & Định hướng tương lai -->
-    <section id="vision">
-        <h2>🌟 Tầm nhìn & Định hướng tương lai</h2>
-        <p>Mình mong muốn trở thành một designer chuyên nghiệp, không chỉ giỏi về kỹ thuật mà còn có tư duy sáng tạo và khả năng truyền tải thông điệp qua hình ảnh. Trong tương lai, mình sẽ tiếp tục nâng cao kỹ năng thiết kế, học thêm về UI/UX và lập trình web để mở rộng cơ hội trong ngành công nghiệp sáng tạo. Mục tiêu là xây dựng một portfolio ấn tượng, tham gia nhiều dự án thực tế hơn và có thể đóng góp vào những sản phẩm mang giá trị thẩm mỹ và ứng dụng cao.</p>
-        <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
-    </section>
+        <!-- Cửa hàng (Để trống) -->
+        <section id="shop">
+            <h2>🛒 Cửa hàng</h2>
+            <p><em>Hiện tại chưa có sản phẩm nào. Hãy quay lại sau nhé!</em></p>
+        </section>
 
-    <!-- Liên hệ -->
-    <section id="contact">
-        <h2>Liên hệ</h2>
-        <p>Cảm ơn bạn đã ghé thăm! Nếu bạn muốn kết nối hoặc hợp tác, đừng ngần ngại liên hệ với mình nhé. 🚀</p>
-        <div class="social-links">
-            <a href="mailto:dtc245310033@ictu.edu.vn" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/768px-Gmail_icon_%282020%29.svg.png" alt="Gmail">
-            </a>
-            <a href="https://www.facebook.com/hhduchuy" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/900px-Facebook_Logo_%282019%29.png" alt="Facebook">
-            </a>
-        </div>
-        <p>Website: <a href="http://hduchuy.id.vn">hduchuy.id.vn</a></p>
-    </section>
+        <!-- Tầm nhìn & Định hướng tương lai -->
+        <section id="vision">
+            <h2>🌟 Tầm nhìn & Định hướng tương lai</h2>
+            <p>Mình mong muốn trở thành một designer chuyên nghiệp, không chỉ giỏi về kỹ thuật mà còn có tư duy sáng tạo và khả năng truyền tải thông điệp qua hình ảnh. Trong tương lai, mình sẽ tiếp tục nâng cao kỹ năng thiết kế, học thêm về UI/UX và lập trình web để mở rộng cơ hội trong ngành công nghiệp sáng tạo. Mục tiêu là xây dựng một portfolio ấn tượng, tham gia nhiều dự án thực tế hơn và có thể đóng góp vào những sản phẩm mang giá trị thẩm mỹ và ứng dụng cao.</p>
+            <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Hoàng Đức Huy (Fourth). All rights reserved.</p>
-    </footer>
+        <!-- Liên hệ -->
+        <section id="contact">
+            <h2>Liên hệ</h2>
+            <p>Cảm ơn bạn đã ghé thăm! Nếu bạn muốn kết nối hoặc hợp tác, đừng ngần ngại liên hệ với mình nhé. 🚀</p>
+            <div class="social-links">
+                <a href="mailto:dtc245310033@ictu.edu.vn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/768px-Gmail_icon_%282020%29.svg.png" alt="Gmail">
+                </a>
+                <a href="https://www.facebook.com/hhduchuy" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/900px-Facebook_Logo_%282019%29.png" alt="Facebook">
+                </a>
+            </div>
+            <p>Website: <a href="http://hduchuy.id.vn">hduchuy.id.vn</a></p>
+        </section>
 
-    <!-- JavaScript để toggle menu -->
-    <script>
-        const menuBtn = document.querySelector('.menu-btn');
-        const dropdown = document.querySelector('.dropdown');
-
-        menuBtn.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
-    </script>
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Hoàng Đức Huy (Fourth). All rights reserved.</p>
+        </footer>
+    </main>
 </body>
 </html>
