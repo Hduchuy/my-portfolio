@@ -26,8 +26,7 @@
         }
 
         body {
-            background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center fixed;
-            background-size: cover; /* Lấp đầy chiều ngang và giữ tỷ lệ */
+            background-color: #fff0f5; /* Nền mặc định cho toàn bộ trang */
             color: #333;
             line-height: 1.6;
             scroll-behavior: smooth;
@@ -85,11 +84,13 @@
             padding-top: 80px; /* Khoảng cách để không bị header che */
         }
 
-        /* Hero Section (Chỉ chứa avatar và tên, không cần hình nền vì đã đặt ở body) */
+        /* Hero Section (Chứa hình nền, avatar và tên) */
         .hero-section {
             position: relative;
             width: 100%;
             height: 70vh; /* Chiều cao tương đối với màn hình, có thể điều chỉnh */
+            background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
+            background-size: cover; /* Lấp đầy chiều ngang, giữ tỷ lệ */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -144,7 +145,7 @@
             padding: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Nền trắng với độ mờ để thấy được hình nền */
+            background-color: #fff; /* Nền trắng cho các section */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
@@ -415,7 +416,7 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section (Chỉ chứa avatar và tên) -->
+        <!-- Hero Section (Chứa hình nền, avatar và tên) -->
         <section class="hero-section">
             <div class="avatar">
                 <img src="https://i.imgur.com/KyIlX1x.jpeg" alt="Avatar của Hoàng Đức Huy">
