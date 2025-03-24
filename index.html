@@ -26,7 +26,8 @@
         }
 
         body {
-            background-color: #fff0f5;
+            background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center fixed;
+            background-size: cover; /* Lấp đầy chiều ngang và giữ tỷ lệ */
             color: #333;
             line-height: 1.6;
             scroll-behavior: smooth;
@@ -84,13 +85,11 @@
             padding-top: 80px; /* Khoảng cách để không bị header che */
         }
 
-        /* Hero Section */
+        /* Hero Section (Chỉ chứa avatar và tên, không cần hình nền vì đã đặt ở body) */
         .hero-section {
             position: relative;
             width: 100%;
             height: 70vh; /* Chiều cao tương đối với màn hình, có thể điều chỉnh */
-            background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
-            background-size: cover; /* Lấp đầy chiều ngang, giữ tỷ lệ */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -145,7 +144,7 @@
             padding: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* Nền trắng với độ mờ để thấy được hình nền */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
@@ -416,7 +415,7 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section (Chỉ chứa avatar và tên) -->
         <section class="hero-section">
             <div class="avatar">
                 <img src="https://i.imgur.com/KyIlX1x.jpeg" alt="Avatar của Hoàng Đức Huy">
@@ -557,12 +556,12 @@
         <!-- Dự án hợp tác -->
         <section id="collaboration">
             <h2>🤝 Dự án hợp tác</h2>
-            <p>Bạn có nhận xét, góp ý hay liên hệ với mình, hãy cho mình biết thông tin của bạn nhé!</p>
+            <p>Bạn là một designer và muốn hợp tác với mình? Hãy điền thông tin dưới đây để chúng ta cùng tạo ra điều gì đó tuyệt vời!</p>
             <form action="https://formspree.io/f/your-unique-id" method="POST">
                 <input type="text" name="name" placeholder="Tên của bạn" required>
                 <input type="email" name="email" placeholder="Email của bạn" required>
-                <textarea name="idea" placeholder="Ý tưởng, nhận xét, góp ý..." required></textarea>
-                <button type="submit">Gửi đi</button>
+                <textarea name="idea" placeholder="Ý tưởng dự án của bạn..." required></textarea>
+                <button type="submit">Gửi ý tưởng</button>
             </form>
         </section>
 
