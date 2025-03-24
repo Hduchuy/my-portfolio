@@ -176,19 +176,19 @@
         #portfolio .carousel-item .image-container {
             width: 100%;
             max-width: 800px; /* Chiều rộng tối đa của khung */
-            max-height: 400px; /* Chiều cao tối đa của khung */
             margin: 0 auto; /* Căn giữa khung */
             overflow: hidden; /* Ẩn phần hình ảnh vượt ra ngoài khung */
             border-radius: 8px; /* Bo góc khung */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho khung */
+            text-align: center; /* Căn giữa nội dung bên trong */
         }
 
         #portfolio .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Hình ảnh tự điều chỉnh để vừa khung, không bị cắt */
-            display: block;
-            margin: 0 auto;
+            max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng khung */
+            max-height: 400px; /* Giới hạn chiều cao tối đa để không quá lớn */
+            object-fit: contain; /* Hình ảnh hiển thị đầy đủ, giữ tỷ lệ gốc */
+            object-position: center; /* Căn giữa hình ảnh */
+            display: inline-block; /* Đảm bảo hình ảnh không bị ảnh hưởng bởi các thuộc tính block */
         }
 
         #portfolio .carousel-item img:hover {
@@ -355,7 +355,9 @@
             /* Điều chỉnh khung hình ảnh cho màn hình nhỏ */
             #portfolio .carousel-item .image-container {
                 max-width: 100%; /* Đảm bảo khung không vượt quá màn hình */
-                max-height: 300px; /* Giảm chiều cao trên màn hình nhỏ */
+            }
+            #portfolio .carousel-item img {
+                max-height: 300px; /* Giảm chiều cao tối đa trên màn hình nhỏ */
             }
         }
     </style>
@@ -523,12 +525,12 @@
         <!-- Dự án hợp tác -->
         <section id="collaboration">
             <h2>🤝 Dự án hợp tác</h2>
-            <p>Bạn muốn nhận xét, góp ý hay liên hệ với mình? Hãy điền thông tin của bạn vào đây nhé!</p>
+            <p>Bạn là một designer và muốn hợp tác với mình? Hãy điền thông tin dưới đây để chúng ta cùng tạo ra điều gì đó tuyệt vời!</p>
             <form action="https://formspree.io/f/your-unique-id" method="POST">
                 <input type="text" name="name" placeholder="Tên của bạn" required>
                 <input type="email" name="email" placeholder="Email của bạn" required>
-                <textarea name="idea" placeholder="Ý tưởng, lời góp ý, nhận xét..." required></textarea>
-                <button type="submit">Gửi đi</button>
+                <textarea name="idea" placeholder="Ý tưởng dự án của bạn..." required></textarea>
+                <button type="submit">Gửi ý tưởng</button>
             </form>
         </section>
 
