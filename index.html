@@ -84,33 +84,41 @@
             padding-top: 80px; /* Khoảng cách để không bị header che */
         }
 
-        /* Avatar Section */
-        .avatar-section {
-            background-color: #ffb6c1;
+        /* Hero Section (Thay thế Avatar Section) */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 70vh; /* Chiều cao tương đối với màn hình */
+            background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
+            background-size: cover; /* Lấp đầy chiều ngang, giữ tỷ lệ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 2rem;
+            color: #fff;
         }
 
-        .avatar {
-            width: 150px;
-            height: 150px;
+        .hero-section .avatar {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto 1rem;
+            margin-bottom: 1rem;
             border: 5px solid #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .avatar img {
+        .hero-section .avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .avatar-section h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 1rem;
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         /* Sections */
@@ -326,12 +334,15 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .avatar-section h1 {
+            .hero-section {
+                height: 50vh; /* Giảm chiều cao trên màn hình nhỏ */
+            }
+            .hero-section h1 {
                 font-size: 2rem;
             }
-            .avatar {
-                width: 120px;
-                height: 120px;
+            .hero-section .avatar {
+                width: 100px;
+                height: 100px;
             }
             header {
                 flex-wrap: wrap;
@@ -386,8 +397,8 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Avatar Section -->
-        <section class="avatar-section">
+        <!-- Hero Section (Thay thế Avatar Section) -->
+        <section class="hero-section">
             <div class="avatar">
                 <img src="https://i.imgur.com/KyIlX1x.jpeg" alt="Avatar của Hoàng Đức Huy">
             </div>
@@ -525,12 +536,12 @@
         <!-- Dự án hợp tác -->
         <section id="collaboration">
             <h2>🤝 Dự án hợp tác</h2>
-            <p>Bạn muốn nhận xét, góp ý hay liên hệ với mình? Hãy điền thông tin của bạn vào đây nhé!</p>
+            <p>Bạn là một designer và muốn hợp tác với mình? Hãy điền thông tin dưới đây để chúng ta cùng tạo ra điều gì đó tuyệt vời!</p>
             <form action="https://formspree.io/f/your-unique-id" method="POST">
                 <input type="text" name="name" placeholder="Tên của bạn" required>
                 <input type="email" name="email" placeholder="Email của bạn" required>
-                <textarea name="idea" placeholder="Ý tưởng, nhận xét, góp ý,..." required></textarea>
-                <button type="submit">Gửi đi</button>
+                <textarea name="idea" placeholder="Ý tưởng dự án của bạn..." required></textarea>
+                <button type="submit">Gửi ý tưởng</button>
             </form>
         </section>
 
