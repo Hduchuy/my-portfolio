@@ -87,10 +87,11 @@
         /* Hero Section (Chứa hình nền, avatar và tên) */
         .hero-section {
             position: relative;
-            width: 100%;
+            max-width: 1200px; /* Căn giữa giống các section khác */
+            margin: 0 auto; /* Căn giữa */
             height: calc(100vh - 80px); /* Chiều cao vừa khít màn hình, trừ chiều cao header */
             background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
-            background-size: 100% auto; /* Đảm bảo lấp đầy bề ngang, chiều cao tự động điều chỉnh */
+            background-size: cover; /* Lấp đầy khu vực hero section */
             background-position: center center; /* Căn giữa hình ảnh */
             display: flex;
             flex-direction: column;
@@ -98,8 +99,8 @@
             align-items: center;
             text-align: center;
             color: #fff;
-            margin: 0; /* Loại bỏ margin để khớp với header */
-            padding: 0; /* Loại bỏ padding để khớp với header */
+            border-radius: 10px; /* Bo góc giống các section khác */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Đổ bóng giống các section khác */
         }
 
         .hero-section .avatar {
@@ -356,10 +357,22 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Chỉnh header trên mobile: chỉ hiển thị logo và tên, căn giữa */
+            header {
+                justify-content: center; /* Căn giữa logo và tên */
+                padding: 0.5rem 1rem;
+            }
+            header nav {
+                display: none; /* Ẩn các tag điều hướng trên mobile */
+            }
+            header .logo {
+                font-size: 1rem;
+            }
+
+            /* Hero Section trên mobile */
             .hero-section {
-                height: calc(100vh - 100px); /* Điều chỉnh chiều cao trên màn hình nhỏ */
-                background-size: 100% auto; /* Đảm bảo lấp đầy bề ngang trên màn hình nhỏ */
-                background-position: center center; /* Căn giữa hình ảnh */
+                height: calc(100vh - 60px); /* Điều chỉnh chiều cao trên màn hình nhỏ (header nhỏ hơn) */
+                margin: 0 1rem; /* Thêm margin hai bên để không sát mép */
             }
             .hero-section h1 {
                 font-size: 2rem;
@@ -368,39 +381,23 @@
                 width: 100px;
                 height: 100px;
             }
-            header {
-                flex-wrap: wrap;
-                padding: 0.5rem 1rem;
+
+            /* Các section khác */
+            section {
+                margin: 0 1rem; /* Thêm margin hai bên để không sát mép */
             }
-            header .logo {
-                font-size: 1rem;
-            }
-            header nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            header nav ul li a {
-                font-size: 0.9rem;
-            }
+
             #contact .social-links {
                 flex-direction: column;
                 gap: 1rem;
             }
+
             /* Điều chỉnh khung hình ảnh cho màn hình nhỏ */
             #portfolio .carousel-item .image-container {
                 max-width: 100%; /* Đảm bảo khung không vượt quá màn hình */
             }
             #portfolio .carousel-item img {
                 max-height: 300px; /* Giảm chiều cao tối đa trên màn hình nhỏ */
-            }
-        }
-
-        /* Đảm bảo lấp đầy bề ngang trên các kích thước lớn hơn */
-        @media (min-width: 1200px) {
-            .hero-section {
-                background-size: 100% auto; /* Đảm bảo lấp đầy bề ngang */
-                background-position: center center; /* Căn giữa hình ảnh */
             }
         }
     </style>
