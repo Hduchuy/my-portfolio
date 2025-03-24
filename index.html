@@ -50,14 +50,14 @@
             display: flex;
             align-items: center;
             color: #fff;
-            font-size: 1.5rem; /* Tăng kích thước chữ logo trên desktop */
+            font-size: 1.2rem; /* Thu nhỏ kích thước chữ logo trên desktop */
             font-weight: 600;
         }
 
         header .logo img {
-            width: 45px; /* Tăng kích thước logo */
-            height: 45px;
-            margin-right: 0.8rem;
+            width: 40px; /* Thu nhỏ kích thước logo trên desktop */
+            height: 40px;
+            margin-right: 0.5rem;
             border-radius: 50%; /* Làm logo thành hình tròn */
             object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
         }
@@ -65,13 +65,13 @@
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem; /* Tăng khoảng cách giữa các tag */
+            gap: 1.5rem; /* Thu nhỏ khoảng cách giữa các tag */
         }
 
         header nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.1rem; /* Tăng kích thước chữ tag */
+            font-size: 1rem; /* Thu nhỏ kích thước chữ tag */
             transition: color 0.3s;
         }
 
@@ -79,9 +79,19 @@
             color: #fff0f5;
         }
 
+        /* Nút menu hamburger (chỉ hiển thị trên mobile) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         /* Main Content (Đẩy xuống để không bị che bởi header cố định) */
         main {
-            padding-top: 90px; /* Tăng padding-top để không bị header che */
+            padding-top: 80px; /* Giảm padding-top vì header nhỏ hơn */
         }
 
         /* Hero Section (Chứa hình nền, avatar và tên) */
@@ -89,7 +99,7 @@
             position: relative;
             max-width: 1200px; /* Căn giữa giống các section khác */
             margin: 0 auto; /* Căn giữa */
-            height: calc(100vh - 90px); /* Chiều cao vừa khít màn hình, trừ chiều cao header */
+            height: calc(100vh - 80px); /* Chiều cao vừa khít màn hình, trừ chiều cao header */
             background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
             background-size: cover; /* Lấp đầy khu vực hero section */
             background-position: center center; /* Căn giữa hình ảnh */
@@ -104,7 +114,7 @@
         }
 
         .hero-section .avatar {
-            width: 150px; /* Tăng kích thước avatar trên desktop */
+            width: 150px; /* Kích thước avatar trên desktop */
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
@@ -116,7 +126,7 @@
         .hero-section .avatar img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
         }
 
         .hero-section .name-container {
@@ -139,7 +149,7 @@
         .hero-section h1 {
             position: relative;
             z-index: 2; /* Đặt chữ lên trên lớp mờ */
-            font-size: 3.5rem; /* Tăng kích thước chữ trên desktop */
+            font-size: 3.5rem; /* Kích thước chữ trên desktop */
             font-weight: 600;
             padding: 0.5rem 1rem; /* Khoảng cách bên trong lớp mờ */
         }
@@ -156,13 +166,13 @@
         }
 
         section h2 {
-            font-size: 2rem; /* Tăng kích thước tiêu đề section */
+            font-size: 2rem; /* Kích thước tiêu đề section */
             color: #ff69b4;
             margin-bottom: 1.5rem;
         }
 
         section p, section li {
-            font-size: 1.2rem; /* Tăng kích thước chữ */
+            font-size: 1.2rem; /* Kích thước chữ */
             margin-bottom: 1rem;
         }
 
@@ -172,7 +182,7 @@
         }
 
         #skills h3 {
-            font-size: 1.5rem; /* Tăng kích thước tiêu đề phụ */
+            font-size: 1.5rem; /* Kích thước tiêu đề phụ */
             color: #ff69b4;
             margin-top: 1.5rem;
             margin-bottom: 0.8rem;
@@ -206,7 +216,7 @@
         /* Khung chứa hình ảnh */
         #portfolio .carousel-item .image-container {
             width: 100%;
-            max-width: 900px; /* Tăng chiều rộng tối đa của khung */
+            max-width: 900px; /* Chiều rộng tối đa của khung */
             margin: 0 auto; /* Căn giữa khung */
             overflow: hidden; /* Ẩn phần hình ảnh vượt ra ngoài khung */
             border-radius: 8px; /* Bo góc khung */
@@ -216,7 +226,7 @@
 
         #portfolio .carousel-item img {
             max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng khung */
-            max-height: 500px; /* Tăng chiều cao tối đa trên desktop */
+            max-height: 500px; /* Chiều cao tối đa trên desktop */
             object-fit: contain; /* Hình ảnh hiển thị đầy đủ, giữ tỷ lệ gốc */
             object-position: center; /* Căn giữa hình ảnh */
             display: inline-block; /* Đảm bảo hình ảnh không bị ảnh hưởng bởi các thuộc tính block */
@@ -247,7 +257,7 @@
             background-color: rgba(255, 105, 180, 0.7);
             color: #fff;
             border: none;
-            padding: 0.8rem 1.5rem; /* Tăng kích thước nút */
+            padding: 0.8rem 1.5rem; /* Kích thước nút */
             cursor: pointer;
             font-size: 1.8rem;
             transition: background-color 0.3s;
@@ -265,7 +275,7 @@
         }
 
         #blog .post h3 {
-            font-size: 1.6rem; /* Tăng kích thước tiêu đề bài post */
+            font-size: 1.6rem; /* Kích thước tiêu đề bài post */
             color: #ff69b4;
             margin-bottom: 0.8rem;
         }
@@ -286,7 +296,7 @@
             background-color: #ff69b4;
             color: #fff;
             border: none;
-            padding: 0.6rem 1.2rem; /* Tăng kích thước nút */
+            padding: 0.6rem 1.2rem; /* Kích thước nút */
             border-radius: 5px;
             cursor: pointer;
             margin-top: 0.8rem;
@@ -301,26 +311,26 @@
         #collaboration form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem; /* Tăng khoảng cách giữa các trường */
+            gap: 1.5rem; /* Khoảng cách giữa các trường */
         }
 
         #collaboration input, #collaboration textarea {
             width: 100%;
-            padding: 0.8rem; /* Tăng padding */
+            padding: 0.8rem; /* Padding */
             border: 1px solid #ff69b4;
             border-radius: 5px;
-            font-size: 1.1rem; /* Tăng kích thước chữ */
+            font-size: 1.1rem; /* Kích thước chữ */
         }
 
         #collaboration textarea {
-            height: 120px; /* Tăng chiều cao textarea */
+            height: 120px; /* Chiều cao textarea */
         }
 
         #collaboration button {
             background-color: #ff69b4;
             color: #fff;
             border: none;
-            padding: 0.8rem 1.5rem; /* Tăng kích thước nút */
+            padding: 0.8rem 1.5rem; /* Kích thước nút */
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -333,13 +343,13 @@
         /* Contact */
         #contact .social-links {
             display: flex;
-            gap: 2rem; /* Tăng khoảng cách giữa các icon */
+            gap: 2rem; /* Khoảng cách giữa các icon */
             justify-content: center;
             margin-top: 1.5rem;
         }
 
         #contact .social-links a img {
-            width: 50px; /* Tăng kích thước icon */
+            width: 50px; /* Kích thước icon */
             height: 50px;
             transition: transform 0.3s;
         }
@@ -353,25 +363,45 @@
             background-color: #ffb6c1;
             color: #fff;
             text-align: center;
-            padding: 1.5rem; /* Tăng padding */
-            font-size: 1.1rem; /* Tăng kích thước chữ */
+            padding: 1.5rem; /* Padding */
+            font-size: 1.1rem; /* Kích thước chữ */
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            /* Chỉnh header trên mobile: chỉ hiển thị logo và tên, căn giữa */
+            /* Chỉnh header trên mobile: thêm nút menu hamburger */
             header {
-                justify-content: center; /* Căn giữa logo và tên */
+                justify-content: space-between; /* Đặt logo ở giữa, nút menu ở góc trái */
                 padding: 0.8rem 1rem; /* Giảm padding */
             }
+            .menu-toggle {
+                display: block; /* Hiển thị nút hamburger trên mobile */
+                position: absolute;
+                left: 1rem;
+            }
             header nav {
-                display: none; /* Ẩn các tag điều hướng trên mobile */
+                display: none; /* Ẩn menu mặc định */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #ff85a2;
+                padding: 1rem;
+            }
+            header nav.active {
+                display: block; /* Hiển thị menu khi nhấn nút */
+            }
+            header nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
             }
             header .logo {
-                font-size: 1.2rem; /* Giảm kích thước chữ logo trên mobile */
+                font-size: 1.2rem; /* Kích thước chữ logo trên mobile */
+                justify-content: center;
+                flex-grow: 1;
             }
             header .logo img {
-                width: 35px; /* Giảm kích thước logo trên mobile */
+                width: 35px; /* Kích thước logo trên mobile */
                 height: 35px;
                 margin-right: 0.5rem;
             }
@@ -383,20 +413,30 @@
 
             /* Hero Section trên mobile: hình chữ nhật ngang */
             .hero-section {
-                height: 250px; /* Giảm chiều cao để tạo hình chữ nhật ngang */
+                height: 250px; /* Chiều cao để tạo hình chữ nhật ngang */
                 margin: 0 1rem; /* Thêm margin hai bên để không sát mép */
                 background-size: cover; /* Lấp đầy khu vực hero section */
                 background-position: center center; /* Căn giữa hình ảnh */
             }
+            .hero-section .name-container::before {
+                display: none; /* Xóa lớp màu đen phía sau tên trên mobile */
+            }
             .hero-section h1 {
-                font-size: 1.8rem; /* Giảm kích thước chữ trên mobile */
+                font-size: 1.5rem; /* Giảm kích thước chữ trên mobile */
                 padding: 0.3rem 0.8rem; /* Giảm padding */
             }
             .hero-section .avatar {
-                width: 90px; /* Giảm kích thước avatar trên mobile */
+                width: 90px; /* Kích thước avatar trên mobile */
                 height: 90px;
                 border-width: 3px; /* Giảm độ dày viền */
                 margin-bottom: 1rem;
+                border-radius: 50%; /* Đảm bảo hình tròn */
+                overflow: hidden; /* Đảm bảo hình ảnh không tràn ra ngoài */
+            }
+            .hero-section .avatar img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
             }
 
             /* Sections trên mobile */
@@ -488,6 +528,7 @@
 <body>
     <!-- Header (Thanh điều hướng cố định) -->
     <header>
+        <button class="menu-toggle">☰</button>
         <div class="logo">
             <img src="https://i.imgur.com/Po1V1uq.png" alt="Logo">
             <span>Hoàng Đức Huy (Fourth)</span>
@@ -695,6 +736,14 @@
 
     <!-- JavaScript -->
     <script>
+        // Toggle menu trên mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('header nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
         // Carousel cho section Tác phẩm
         const carouselItems = document.querySelectorAll('.carousel-item');
         const prevBtn = document.querySelector('.carousel-nav .prev');
