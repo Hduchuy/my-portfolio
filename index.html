@@ -101,14 +101,14 @@
 
         /* Main Content */
         main {
-            padding-top: 0; /* Loại bỏ padding-top để hero sát header */
+            padding-top: 0; /* Không thêm padding-top ở đây */
         }
 
         /* Hero Section */
         .hero-section {
             position: relative;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: clamp(60px, 10vw, 80px) auto 0; /* Thêm margin-top để không bị đè bởi header */
             height: clamp(250px, 50vw, 400px);
             background: url('https://i.imgur.com/2v1rJps.jpeg') no-repeat center center;
             background-size: cover;
@@ -121,7 +121,6 @@
             color: #fff;
             border-radius: 0 0 10px 10px; /* Chỉ bo góc dưới */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            margin-top: 0; /* Đảm bảo sát header */
             margin-bottom: clamp(3rem, 5vw, 4rem); /* Tăng khoảng cách với phần dưới */
         }
 
@@ -413,6 +412,9 @@
             header nav ul {
                 flex-direction: column;
                 gap: clamp(0.5rem, 1vw, 0.8rem);
+            }
+            .hero-section {
+                margin-top: clamp(50px, 8vw, 70px); /* Điều chỉnh margin-top cho mobile */
             }
         }
     </style>
