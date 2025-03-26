@@ -43,7 +43,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: nowrap;
             z-index: 1000;
         }
 
@@ -53,8 +52,6 @@
             color: #fff;
             font-size: clamp(0.8rem, 2vw, 1.5rem);
             font-weight: 600;
-            flex-shrink: 1;
-            min-width: 0;
             white-space: nowrap;
         }
 
@@ -70,7 +67,6 @@
             list-style: none;
             display: flex;
             gap: clamp(0.5rem, 1vw, 1.5rem);
-            flex-wrap: nowrap;
             margin: 0;
             padding: 0;
         }
@@ -81,7 +77,6 @@
             font-size: clamp(0.7rem, 1.5vw, 1rem);
             transition: color 0.3s;
             white-space: nowrap;
-            flex-shrink: 1;
         }
 
         header nav ul li a:hover {
@@ -96,12 +91,11 @@
             color: #fff;
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             cursor: pointer;
-            flex-shrink: 0;
         }
 
         /* Main Content */
         main {
-            padding-top: clamp(60px, 10vw, 80px);
+            padding-top: clamp(50px, 8vw, 60px); /* Giảm khoảng cách với header */
         }
 
         /* Hero Section */
@@ -121,6 +115,7 @@
             color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: clamp(1rem, 2vw, 1.5rem); /* Tạo khoảng cách nhẹ với nội dung bên dưới */
         }
 
         .hero-section .avatar {
@@ -384,20 +379,20 @@
         @media (max-width: 1000px) {
             header {
                 padding: clamp(0.5rem, 1vw, 1rem) clamp(0.5rem, 1vw, 1rem);
-                justify-content: center; /* Căn giữa toàn bộ header */
-                position: relative; /* Để nút menu và nav hoạt động đúng */
+                justify-content: center;
+                position: fixed;
             }
             .menu-toggle {
                 display: block;
                 position: absolute;
-                left: clamp(0.5rem, 1vw, 1rem); /* Nút menu ở góc trái */
+                left: clamp(0.5rem, 1vw, 1rem);
             }
             header .logo {
-                justify-content: center; /* Căn giữa logo và tên */
-                flex-grow: 1; /* Cho phép logo chiếm không gian giữa */
+                justify-content: center;
+                flex-grow: 1;
             }
             header nav {
-                display: none; /* Ẩn menu khi màn hình nhỏ */
+                display: none;
             }
             header nav.active {
                 display: block;
@@ -599,8 +594,7 @@
         <!-- Tầm nhìn & Định hướng tương lai -->
         <section id="vision">
             <h2>🌟 Tầm nhìn & Định hướng tương lai</h2>
-            <p>Mình mong muốn trở thành một designer chuyên nghiệp, không chỉ giỏi về kỹ thuật mà còn có tư duy sáng tạo và khả năng truyền tải thông điệp qua hình ảnh. Trong tương lai, mình sẽ tiếp tục nâng cao kỹ năng thiết kế, học thêm về UI/UX và lập trình web để mở rộng cơ hội trong ngành công nghiệp sáng tạo. Mục tiêu là xây dựng một portfolio ấn tượng, tham gia nhiều dự án thực tế hơn và có thể đóng góp vào những sản phẩm mang giá trị thẩm mỹ và ứng dụng cao.</p>
-            <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
+            <p>Mình mong muốn trở thành một designer chuyên nghiệp, không chỉ giỏi về kỹ thuật mà còn có tư duy sáng tạo và khả năng truyền tải thông điệp qua hình ảnh. Trong tương lai, mình sẽ tiếp tục nâng cao kỹ năng thiết kế, học thêm về UI/UX và lập trình web để mở rộng cơ hội trong ngành công nghiệp sáng tạo. Mục tiêu là xây dựng một portfolio ấn tượng, tham gia nhiều dự án thực tế hơn <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
         </section>
 
         <!-- Liên hệ -->
