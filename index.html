@@ -53,6 +53,7 @@
             font-size: clamp(0.8rem, 2vw, 1.5rem);
             font-weight: 600;
             white-space: nowrap;
+            flex-shrink: 0; /* Ngăn logo bị co lại quá mức */
         }
 
         header .logo img {
@@ -69,6 +70,7 @@
             gap: clamp(0.5rem, 1vw, 1.5rem);
             margin: 0;
             padding: 0;
+            flex-wrap: wrap; /* Cho phép menu xuống dòng nếu không đủ chỗ */
         }
 
         header nav ul li a {
@@ -91,11 +93,12 @@
             color: #fff;
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         /* Main Content */
         main {
-            padding-top: clamp(50px, 8vw, 60px); /* Giảm khoảng cách với header */
+            padding-top: clamp(50px, 8vw, 60px);
         }
 
         /* Hero Section */
@@ -115,7 +118,7 @@
             color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            margin-bottom: clamp(1rem, 2vw, 1.5rem); /* Tạo khoảng cách nhẹ với nội dung bên dưới */
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
         }
 
         .hero-section .avatar {
@@ -376,7 +379,7 @@
         }
 
         /* Responsive */
-        @media (max-width: 1000px) {
+        @media (max-width: 768px) { /* Giảm ngưỡng từ 1000px xuống 768px */
             header {
                 padding: clamp(0.5rem, 1vw, 1rem) clamp(0.5rem, 1vw, 1rem);
                 justify-content: center;
@@ -406,6 +409,17 @@
             header nav ul {
                 flex-direction: column;
                 gap: clamp(0.5rem, 1vw, 0.8rem);
+            }
+        }
+
+        /* Giữ hiển thị tốt ở kích thước trung gian */
+        @media (min-width: 769px) and (max-width: 1000px) {
+            header nav ul {
+                flex-wrap: wrap; /* Cho phép menu xuống dòng nếu cần */
+                justify-content: flex-end;
+            }
+            header .logo {
+                flex-shrink: 0;
             }
         }
     </style>
@@ -594,7 +608,8 @@
         <!-- Tầm nhìn & Định hướng tương lai -->
         <section id="vision">
             <h2>🌟 Tầm nhìn & Định hướng tương lai</h2>
-            <p>Mình mong muốn trở thành một designer chuyên nghiệp, không chỉ giỏi về kỹ thuật mà còn có tư duy sáng tạo và khả năng truyền tải thông điệp qua hình ảnh. Trong tương lai, mình sẽ tiếp tục nâng cao kỹ năng thiết kế, học thêm về UI/UX và lập trình web để mở rộng cơ hội trong ngành công nghiệp sáng tạo. Mục tiêu là xây dựng một portfolio ấn tượng, tham gia nhiều dự án thực tế hơn <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
+            <p>Mình mong muốn trở thành một designer chuyên nghiệp, không chỉ giỏi về kỹ thuật mà còn có tư duy sáng tạo và khả năng truyền tải thông điệp qua hình ảnh. Trong tương lai, mình sẽ tiếp tục nâng cao kỹ năng thiết kế, học thêm về UI/UX và lập trình web để mở rộng cơ hội trong ngành công nghiệp sáng tạo. Mục tiêu là xây dựng một portfolio ấn tượng, tham gia nhiều dự án thực tế hơn và có thể đóng góp vào những sản phẩm mang giá trị thẩm mỹ và ứng dụng cao.</p>
+            <p>Mình luôn sẵn sàng học hỏi và chinh phục những thử thách mới trên con đường theo đuổi đam mê thiết kế!</p>
         </section>
 
         <!-- Liên hệ -->
